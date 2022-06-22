@@ -1,0 +1,455 @@
+<!doctype html>
+<html class="no-js" lang="es">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="El protocolo HTTP" href="http.html" /><link rel="prev" title="Arquitecturas y Herramientas de Programación" href="index.html" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.04.1"/>
+        <title>Arquitectura cliente/servidor - Arquitecturas y Herramientas de Programación Web</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #4a86cf;
+  --color-brand-content: #4a86cf;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Arquitecturas y Herramientas de Programación Web</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">Arquitecturas y Herramientas de Programación Web</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Búsqueda name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Arquitectura cliente/servidor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http.html">El protocolo HTTP</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="arquitectura-cliente-servidor">
+<h1>Arquitectura cliente/servidor<a class="headerlink" href="#arquitectura-cliente-servidor" title="Enlazar permanentemente con este título">#</a></h1>
+<p>En esta arquitectura las tareas se reparten entre dos actores:</p>
+<dl>
+<dt><strong>Cliente</strong></dt><dd><p>Los clientes realizan peticiones y reciben las respuestas con los resultados a dichas peticiones.</p>
+<p>Se encargan de ofrecer una interfaz al usuario, es la parte que maneja el usuario final.</p>
+</dd>
+<dt><strong>Servidor</strong></dt><dd><p>Los servidores están a la escucha de las peticiones de los clientes. Cuando reciben una petición entonces realizan una acción y devuelven un resultado.</p>
+<p>Se encarga, pues, de la lógica del sistema.</p>
+</dd>
+</dl>
+<p>Cuando hablamos de cliente y de servidor nos estamos refiriendo, de forma general, tanto al software como al hardware.</p>
+<p>La arquitectura cliente/servidor no es exclusiva del desarrollo web y es utilizada por multitud de aplicaciones. Algunos ejemplos son:</p>
+<ul class="simple">
+<li><p>Los servicios de nube o almacenamiento de archivos en red.</p></li>
+<li><p>El correo electrónico.</p></li>
+<li><p>Servicios de impresión en red.</p></li>
+<li><p>La Web o WWW (<em>World Wide Web</em>).</p></li>
+</ul>
+<p>A los servidores se les suele dar un nombre relacionado con el servicio al que atienden: servidores de archivo, servidores de correo, servidores de impresión o servidores web, en los ejemplos listados arriba.</p>
+<p>En el caso que nos ocupa, el desarrollo web, los clientes solicitan que se les sirva una página web para visualizarla. En este contexto, a la solicitud que hacen los clientes se les denomina <strong>petición</strong> (<em>request</em>) y a lo que devuelve el servidor se le llama <strong>respuesta</strong> (<em>response</em>).</p>
+<p>Lo normal es que hayan muchos clientes haciendo peticiones a un servidor, por tanto el servidor tiene que estar preparado para soportar una determinada carga de peticiones que tiene que ser medida cuando se implanta. Cuando un servidor no puede hacerse cargo de todas las peticiones se puede quedar <em>colgado</em> y, en este caso, quedar el servicio interrumpido hasta que se solucione el problema (esta es la base de los ataques DDoS o ataques de denegación de servicio: se lanzan gran cantidad de peticiones a un servidor hasta «tirarlo»).</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="_images/client_server_model.svg"><img alt="_images/client_server_model.svg" src="_images/client_server_model.svg" width="100%" /></a>
+<figcaption>
+<p><span class="caption-text">Arquitectura cliente/servidor</span><a class="headerlink" href="#id3" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<section id="la-web">
+<span id="id1"></span><h2>La Web<a class="headerlink" href="#la-web" title="Enlazar permanentemente con este título">#</a></h2>
+<p>La <em>World Wide Web</em> (WWW), normalmente conocida como <strong>Web</strong>, es una de las plataformas de software dominantes en la actualidad, sino la más. Es un espacio de información donde documentos y otros recursos web pueden ser accedidos a través de Internet utilizando navegadores web.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Ver también</p>
+<p>El informático inglés Tim Berners-Lee inventó la Web en 1989 mientras trabajaba en el CERN en Suiza. En 1990 desarrolló los fundamentos de la Web: HTTP, HTML, un navegador web, un servidor y el primero sitio web. <a class="reference internal" href="#historiaweb" id="id2"><span>[HistoriaWeb]</span></a>.</p>
+</div>
+<p>La Web emplea la arquitectura cliente/servidor y el <strong>protocolo HTTP</strong> (o HTTPS) para la comunicación entre estos dos actores: cliente y servidor.</p>
+<section id="cliente">
+<h3>Cliente<a class="headerlink" href="#cliente" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Un cliente puede ser, a nivel de <strong>hardware</strong>, un PC, portátil, <em>smartphone</em>, o cualquier otro dispositivo. En cuanto al <strong>software</strong>, en el contexto de la Web, normalmente es un navegador web como <em>Firefox</em>, <em>Google Chrome</em>, <em>Microsoft Edge</em>, u otros.</p>
+<p>Los navegadores web usan el protocolo HTTP (o HTTPS) para solicitar a un servidor web una página web, que no es más que un documento HTML. Los navegadores web interpretan y renderizan el documento HTML recibido para mostrar el contenido.</p>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p>Si quieres ver el contenido, el documento base HTML, de una página web, usa el navegador web para acceder a la página web, haz clic con el botón derecho sobre la página y elige la opción «Ver código fuente», o algo similar, como puedes ver en la captura <a class="reference internal" href="#ver-codigo-fuente">Ver código fuente</a>.</p>
+<figure class="align-center" id="ver-codigo-fuente">
+<a class="reference internal image-reference" href="_images/ver_codigo_fuente.png"><img alt="_images/ver_codigo_fuente.png" src="_images/ver_codigo_fuente.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">Captura de pantalla con el menú contextual en Firefox donde seleccionar la opción para ver el código HTML de la página web</span><a class="headerlink" href="#ver-codigo-fuente" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+</div>
+<p>Existen otros programas, al margen de los navegadores web, que permiten hacer peticiones a servidores web. Por ejemplo, se tiene el programa <em>curl</em> que podemos usar en la <em>terminal</em>.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UGV0aWNpw7NuICgqcmVxdWVzdCop" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UGV0aWNpw7NuICgqcmVxdWVzdCop" name="UGV0aWNpw7NuICgqcmVxdWVzdCop" role="tab" tabindex="0">Petición (<em>request</em>)</button><button aria-controls="panel-0-UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" name="UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" role="tab" tabindex="-1">Respuesta (<em>response</em>)</button></div><div aria-labelledby="tab-0-UGV0aWNpw7NuICgqcmVxdWVzdCop" class="sphinx-tabs-panel group-tab" id="panel-0-UGV0aWNpw7NuICgqcmVxdWVzdCop" name="UGV0aWNpw7NuICgqcmVxdWVzdCop" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Ejemplo de ejecución de curl para obtener la página de noticias del IES La Encantá</span><a class="headerlink" href="#id4" title="Enlace permanente a este código fuente">#</a></div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>curl http://www.ieslaencanta.com/web/index.php/noticias
+</pre></div>
+</div>
+</div>
+</div><div aria-labelledby="tab-0-UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" name="UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Respuesta (se muestran las primeras líneas)</span><a class="headerlink" href="#id5" title="Enlace permanente a este código fuente">#</a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="linenos"> 2</span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">prefix</span><span class="o">=</span><span class="s">&quot;og: http://ogp.me/ns#&quot;</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es-es&quot;</span> <span class="na">dir</span><span class="o">=</span><span class="s">&quot;ltr&quot;</span>  <span class="na">data-config</span><span class="o">=</span><span class="s">&#39;{&quot;style&quot;:&quot;default&quot;,&quot;layout&quot;:null}&#39;</span><span class="p">&gt;</span>
+<span class="linenos"> 3</span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos"> 4</span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+<span class="linenos"> 5</span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+<span class="linenos"> 6</span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
+<span class="linenos"> 7</span>    <span class="p">&lt;</span><span class="nt">base</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://www.ieslaencanta.com/web/index.php/noticias&quot;</span> <span class="p">/&gt;</span>
+<span class="linenos"> 8</span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;keywords&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IES vega baja, rojales, ciclos, informática, electricidad y electrónica, peluquería, estética, ciclo formativo, peluquería, estilismo, bienestar&quot;</span> <span class="p">/&gt;</span>
+<span class="linenos"> 9</span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:url&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;http://www.ieslaencanta.com/web/index.php/noticias&quot;</span> <span class="p">/&gt;</span>
+<span class="linenos">10</span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;website&quot;</span> <span class="p">/&gt;</span>
+<span class="linenos">11</span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:title&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;NOTICIAS&quot;</span> <span class="p">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div></div>
+<p>Las tecnologías que se usan en el lado del cliente son: HTML, CSS y JavaScript.</p>
+</section>
+<section id="servidor">
+<h3>Servidor<a class="headerlink" href="#servidor" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Los servidores web suelen ser, a nivel <strong>hardware</strong>, ordenadores con mayor capacidad de almacenamiento, memoria y procesamiento. Por parte del <strong>software</strong> las opciones se multiplican ya que depende de las tecnologías y lenguajes que se elijan para desarrollar la aplicación web en cuestión: PHP, Java, Python, etc.</p>
+<p>En los servidores para aplicaciones web se necesitan, al menos, dos tipos de programas: un servidor web y un servidor de base de datos.</p>
+<p>El servidor web es un programa que está a la escucha permanentemente para responder a las peticiones que reciben de los clientes, a través del protocolo HTTP (o HTTPS). Las respuestas de los servidores web con documentos HTML. Ejemplos de servidores web:</p>
+<dl class="simple">
+<dt><strong>Apache</strong></dt><dd><p>Se trata de uno de los software de servidor web más populares. Se usa con lenguajes como PHP, es software libre y desarrollado por la Fundación Apache.</p>
+</dd>
+<dt><strong>nginx</strong></dt><dd><p>Otro de los software para servidores web que se suele emplear con PHP o Python, por ejemplo. También es software libre.</p>
+</dd>
+<dt><strong>Tomcat</strong></dt><dd><p>Este software para servidores web se usa con Java. Es desarrollado por Apache y es software libre.</p>
+</dd>
+<dt><strong>WebLogic</strong></dt><dd><p>Este es, quizás, el software para servidores más popular para Java. Tiene licencia propietaria y desarrollado por Oracle.</p>
+</dd>
+<dt><strong>WildFly</strong></dt><dd><p>Otro software de servidor para Java. Es software libre y desarrollado por Red Hat.</p>
+</dd>
+</dl>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/servidores_logo.png"><img alt="_images/servidores_logo.png" src="_images/servidores_logo.png" style="width: 100%;" /></a>
+</figure>
+<p>Todas las aplicaciones web necesitan almacenar información, y lo hacen en bases de datos. Algunos de los gestores de bases de datos más populares son:</p>
+<dl class="simple">
+<dt><strong>Oracle Database</strong></dt><dd><p>Se trata de un sistema gestor de bases de datos de tipo objeto-relacional desarrollado por Oracle. Tiene licencia privativa.</p>
+</dd>
+<dt><strong>MySQL</strong></dt><dd><p>Este es un sistema gestor de bases de datos relacional desarrollado por una licencia dual: una licencia software libre y otra licencia comercial por Oracle.</p>
+</dd>
+<dt><strong>MariaDB</strong></dt><dd><p>Sistema gestor de bases de datos relacional y se trata de un <em>fork</em> de MySQL que se hizo cuando Oracle adquirió MySQL. Se trata de software libre y es desarrollado por la Fundación MariaDB.</p>
+</dd>
+<dt><strong>PostgreSQL</strong></dt><dd><p>Sistema gestor de bases de datos relacional orientado a objetos y software libre.</p>
+</dd>
+<dt><strong>Microsoft SQL Server</strong></dt><dd><p>Sistema gestor de bases de datos relacional desarrollado por Microsoft y con licencias privativa. Se le suele conocer simplemente como SQL Server.</p>
+</dd>
+</dl>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/servidores_bd_logo.png"><img alt="_images/servidores_bd_logo.png" src="_images/servidores_bd_logo.png" style="width: 80%;" /></a>
+</figure>
+</section>
+</section>
+<section id="protocolo-http-y-documentos-html">
+<h2>Protocolo HTTP y documentos HTML<a class="headerlink" href="#protocolo-http-y-documentos-html" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Como se ha comentado en el apartado <a class="reference internal" href="#la-web"><span class="std std-ref">sobre la Web</span></a> el protocolo que se utiliza para la comunicación entre cliente y servidor se denomina <strong>HTTP</strong> (y su versión cifrada <strong>HTTPS</strong>).</p>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p>Hoy en día todos los servidores web deben usar la versión cifrada de HTTP, es decir, HTTPS. La diferencia básica entre ambos protocolos es que con HTTPS las peticiones del cliente y las respuestas de los servidores viajan cifradas, añadiendo cierta seguridad en las comunicaciones Web.</p>
+</div>
+<p><strong>HTTP</strong> es un acrónimo para <em>HyperText Transfer Protocol</em> (protocolo de transfencia de hipertexto). El hipertexto son las páginas web que no son más que ficheros <strong>HTML</strong>, acrónimo para <em>HyperText Markup Language</em> (lenguaje de marcas de hipertexto).</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Ejemplo de página web en HTML</span><a class="headerlink" href="#id6" title="Enlace permanente a este código fuente">#</a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejemplo de página web<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Mi primera página web<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>¡Hola Mundo!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<p>Más adelante entraré de lleno en el protocolo HTTP.</p>
+</section>
+<section id="front-end-back-end-full-stack">
+<h2>Front-end, Back-end, Full stack<a class="headerlink" href="#front-end-back-end-full-stack" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Teniendo en cuenta el lado en que se ubican las tecnologías y para qué se utilizan éstas, actualmente se habla de 3 perfiles diferentes en el ámbito del desarrollo web:</p>
+<dl>
+<dt><strong>Front-end</strong></dt><dd><p>La gente que trabaja en el front-end se encargan del diseño y de la maquetación de la aplicación web, así como de preocuparse de la correcta presentación en cualquier tipo de dispositivos e incluso del posicionamiento en buscadores.</p>
+<p>Dicho de otro modo, estos profesionales se encargan del desarrollo en el lado del cliente, y vosotros trabajaréis en esta parte en el ḿodulo de <em>Desarrollo web en entorno cliente</em>.</p>
+<p>Aquí se emplean 3 tecnologías como son HTML, CSS y Javascript.</p>
+</dd>
+<dt><strong>Back-end</strong></dt><dd><p>Se trata del desarrollo en el lado del servidor que estudiaremos en este módulo. Los profesionales que se dedican al desarrollo en este área lo hacen con tecnologías como PHP, JSP (Java) o Python.</p>
+<p>Además, aquí se tiene que instalar y administrar el servidor web y el servidor de la base de datos (a menudo alojados en diferentes servidores).</p>
+<p>En este módulo aprenderás a instalar y montar servidores web y de bases de datos de manera básica para poder programar aplicaciones web y en el módulo <em>Despliegue de aplicaciones web</em> profundizarás en este apartado.</p>
+</dd>
+<dt><strong>Full stack</strong></dt><dd><p>En este perfil se engloban las dos áreas anteriores. Los profesionales <em>full stack</em> se hacen expertos en ambas partes aunque a veces lo mejor es especializarse en <em>front-end</em> o <em>back-end</em>.</p>
+<p>No obstante, te decantes por el lado por el que te decantes es muy importante conocer ambas áreas y poder participar en cualquiera de los lados.</p>
+</dd>
+</dl>
+</section>
+<section id="resumiendo">
+<h2>Resumiendo<a class="headerlink" href="#resumiendo" title="Enlazar permanentemente con este título">#</a></h2>
+<p>El desarrollo web se basa en la arquitectura cliente/servidor donde se usa el protocolo HTTP para que los clientes hagan peticiones (<em>request</em>) a los servidores que devuelven respuestas (<em>response</em>) en formato HTML.</p>
+<p>El desarrollo se divide entre la parte del cliente, el front-end, y la parte del servidor, el back-end.</p>
+</section>
+<section id="citas-notas-y-bibliografia">
+<h2>Citas, notas y bibliografía<a class="headerlink" href="#citas-notas-y-bibliografia" title="Enlazar permanentemente con este título">#</a></h2>
+<dl class="citation">
+<dt class="label" id="historiaweb"><span class="brackets"><a class="fn-backref" href="#id2">HistoriaWeb</a></span></dt>
+<dd><p>Historia de la Web &lt;<a class="reference external" href="https://es.wikipedia.org/wiki/World_Wide_Web#Historia">https://es.wikipedia.org/wiki/World_Wide_Web#Historia</a>&gt;</p>
+</dd>
+</dl>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="http.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">El protocolo HTTP</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Román Ginés Martínez Ferrández
+            </div>
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contenidos
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Arquitectura cliente/servidor</a><ul>
+<li><a class="reference internal" href="#la-web">La Web</a><ul>
+<li><a class="reference internal" href="#cliente">Cliente</a></li>
+<li><a class="reference internal" href="#servidor">Servidor</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#protocolo-http-y-documentos-html">Protocolo HTTP y documentos HTML</a></li>
+<li><a class="reference internal" href="#front-end-back-end-full-stack">Front-end, Back-end, Full stack</a></li>
+<li><a class="reference internal" href="#resumiendo">Resumiendo</a></li>
+<li><a class="reference internal" href="#citas-notas-y-bibliografia">Citas, notas y bibliografía</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script src="_static/tabs.js"></script>
+    <script src="_static/translations.js"></script>
+    </body>
+</html>
