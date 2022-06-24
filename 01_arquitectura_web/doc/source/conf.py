@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Arquitecturas y Herramientas de Programación Web'
+project = 'Arquitectura Web'
 copyright = '2022, Román Ginés Martínez Ferrández'
 author = 'Román Ginés Martínez Ferrández'
 
@@ -49,7 +49,7 @@ exclude_patterns = []
 
 # -- Options for HTML output -------------------------------------------------
 
-html_title = "Arquitecturas y Herramientas de Programación Web"
+html_title = "Arquitectura Web"
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.

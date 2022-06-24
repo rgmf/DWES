@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="prev" title="Arquitectura cliente/servidor" href="arquitecturas.html" />
+<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="prev" title="Arquitectura Web" href="arquitectura_web.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.04.1"/>
-        <title>El protocolo HTTP - Arquitecturas y Herramientas de Programación Web</title>
+        <title>El protocolo HTTP - Arquitectura Web</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Arquitecturas y Herramientas de Programación Web</div></a>
+      <a href="index.html"><div class="brand">Arquitectura Web</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -138,7 +138,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -150,7 +150,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">Arquitecturas y Herramientas de Programación Web</span>
+  <span class="sidebar-brand-text">Arquitectura Web</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Búsqueda name="q" aria-label="Búsqueda">
@@ -159,7 +159,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="arquitecturas.html">Arquitectura cliente/servidor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arquitectura_web.html">Arquitectura Web</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">El protocolo HTTP</a></li>
 </ul>
 
@@ -188,7 +188,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -196,7 +196,270 @@
         <article role="main">
           <section id="el-protocolo-http">
 <h1>El protocolo HTTP<a class="headerlink" href="#el-protocolo-http" title="Enlazar permanentemente con este título">#</a></h1>
-<p>Sí o sí</p>
+<p>El protocolo que se utiliza en la Web para la comunicación entre cliente y servidor se denomina <strong>HTTP</strong> (y su versión cifrada <strong>HTTPS</strong>).</p>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p>Hoy en día todos los servidores web deben usar la versión cifrada de HTTP, es decir, HTTPS. La diferencia básica entre ambos protocolos es que con HTTPS las peticiones del cliente y las respuestas de los servidores viajan cifradas, añadiendo cierta seguridad en las comunicaciones Web.</p>
+</div>
+<p><strong>HTTP</strong> es un acrónimo para <em>HyperText Transfer Protocol</em> (protocolo de transferencia de hipertexto). El hipertexto son las páginas web que no son más que ficheros <strong>HTML</strong>, acrónimo para <em>HyperText Markup Language</em> (lenguaje de marcas de hipertexto). No obstante, en el ámbito de los servicios web, hoy en día, se suele usar el formato <strong>JSON</strong> para responder a las peticiones de los clientes.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-RWplbXBsbyBIVE1M" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-RWplbXBsbyBIVE1M" name="RWplbXBsbyBIVE1M" role="tab" tabindex="0">Ejemplo HTML</button><button aria-controls="panel-0-RWplbXBsbyBKU09O" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-RWplbXBsbyBKU09O" name="RWplbXBsbyBKU09O" role="tab" tabindex="-1">Ejemplo JSON</button></div><div aria-labelledby="tab-0-RWplbXBsbyBIVE1M" class="sphinx-tabs-panel group-tab" id="panel-0-RWplbXBsbyBIVE1M" name="RWplbXBsbyBIVE1M" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Ejemplo de página web en HTML</span><a class="headerlink" href="#id2" title="Enlace permanente a este código fuente">#</a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejemplo de página web<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Mi primera página web<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>¡Hola Mundo!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div><div aria-labelledby="tab-0-RWplbXBsbyBKU09O" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-RWplbXBsbyBKU09O" name="RWplbXBsbyBKU09O" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Ejemplo de fichero en formato JSON con información de temperaturas máximas y mínimas de los primeros tres días de la semana</span><a class="headerlink" href="#id3" title="Enlace permanente a este código fuente">#</a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="s2">&quot;lunes&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;maxima&quot;</span><span class="o">:</span> <span class="mf">32</span><span class="p">,</span>
+        <span class="s2">&quot;minima&quot;</span><span class="o">:</span> <span class="mf">23</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;martes&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;maxima&quot;</span><span class="o">:</span> <span class="mf">30</span><span class="p">,</span>
+        <span class="s2">&quot;minima&quot;</span><span class="o">:</span> <span class="mf">21</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;miércoles&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;maxima&quot;</span><span class="o">:</span> <span class="mf">33</span><span class="p">,</span>
+        <span class="s2">&quot;minima&quot;</span><span class="o">:</span> <span class="mf">22</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div></div>
+<p>Para poder desarrollar aplicaciones web es necesario que, al menos, tengas unas nociones básicas del funcionamiento de este protocolo HTTP.</p>
+<section id="caracteristicas-del-protocolo-http">
+<h2>Características del protocolo HTTP<a class="headerlink" href="#caracteristicas-del-protocolo-http" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Se trata de un protocolo orientado a transacciones que sigue un esquema de petición-respuesta entre un cliente y un servidor. Al cliente que efectúa una petición se le denomina <strong>user agent</strong> y suele ser un navegador web.</p>
+<p>La información que se transmite se denomina <strong>recurso</strong> y se la identifica mediante un localizador uniforme de recursos: <strong>URL</strong> (<em>Uniform Resource Locator</em>). Como su nombre indica, una URL no es más que una dirección que es dada a un recurso único en la Web (página web, imagen, vídeo, etc).</p>
+<p>El protocolo HTTP no tiene estado, esto es, no guarda ninguna información sobre conexiones anteriores. Una conversación en este protocolo habitualmente comienza por una petición del cliente de un determinado recurso al servidor. El servidor, responde sirviendo dicho recurso. Pero no guarda ningún tipo de registro o memoria de qué recursos ha servido y a qué clientes. Si a continuación el mismo cliente vuelve a pedir otro recurso, la respuesta del servidor será idéntica al caso en el que un cliente diferente haya pedido el recurso.</p>
+<p>Que el protocolo HTTP sea un protocolo sin estado lo hace altamente escalable pero es, al mismo tiempo, una de sus principales limitaciones que aprenderemos a mitigar cuando desarrollemos aplicaciones web.</p>
+</section>
+<section id="url">
+<h2>URL<a class="headerlink" href="#url" title="Enlazar permanentemente con este título">#</a></h2>
+<p>URL significa <em>Uniform Resource Locator</em> (Localizador de Recursos Uniforme). Una URL no es más que una dirección que es dada a un recurso único en la Web. Cada URL válida apunta a un único recurso. Dichos recursos pueden ser páginas HTML, documentos CSS, imágenes, vídeos, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Las URL las escribimos en la barra de direcciones del navegador web, aunque mucha gente hace uso de un buscador como Google o DuckDuckGo para acceder a las páginas web ya que, a veces, es difícil acordarse de estas URL.</p>
+</div>
+<p>Este es el formato de las URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>protocolo://maquina:puerto/ruta/al/fichero?variables#anchor
+</pre></div>
+</div>
+<ul>
+<li><p>protocolo</p>
+<blockquote>
+<div><p>normalmente será <em>http</em> o <em>https</em>, y va seguido de.</p>
+</div></blockquote>
+</li>
+<li><p>://</p>
+<blockquote>
+<div><p>separador entre el protocolo y la máquina.</p>
+</div></blockquote>
+</li>
+<li><p>maquina</p>
+<blockquote>
+<div><p>puede ser una dirección IP o un nombre de dominio.</p>
+</div></blockquote>
+</li>
+<li><p>:</p>
+<blockquote>
+<div><p>separador entre la máquina y el puerto. Solo hay que ponerlo si se especifica el puerto.</p>
+</div></blockquote>
+</li>
+<li><p>puerto</p>
+<blockquote>
+<div><p>número donde escucha el servidor.</p>
+<p>Los servicios tienen un puerto asociado, de esta manera, en un mismo servidor, con una misma IP o nombre de dominio, se puede tener varios servicios instalados y escuchando a peticiones de los clientes.</p>
+<p>Los primeros 1024 números están reservados para el sistema operativo y usados por «protocolos bien conocidos», como por ejemplo:</p>
+<ul class="simple">
+<li><p>80: puerto para HTTP (servidor web).</p></li>
+<li><p>443: puerto para HTTPS (servidor web con cifrado).</p></li>
+<li><p>21: puerto para FTP (servidor de transferencia de ficheros).</p></li>
+<li><p>22: puerto para SSH (acceso al shell de un servidor, acceso remoto a un servidor).</p></li>
+<li><p>25: puerto para SMTP (servidor de envío de e-mails).</p></li>
+<li><p>587: puerto para SMTP encriptado (servidor de envío de e-mails encriptado).</p></li>
+<li><p>143: puerto para IMAP (servidor de recepción de e-mails).</p></li>
+<li><p>993: puerto para IMAP sobre SSL/TLS (servidor de recepción de e-mails a través de un canal cifrado y seguro).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>/ruta/al/fichero</p>
+<blockquote>
+<div><p>es un <em>path</em> o ruta relativa al recurso en el sistema de archivos del servidor donde se encuentra el sitio web.</p>
+</div></blockquote>
+</li>
+<li><p>?</p>
+<blockquote>
+<div><p>separador entre la ruta y las variables. Solo se pone si hay variables.</p>
+</div></blockquote>
+</li>
+<li><p>variables</p>
+<blockquote>
+<div><p>parejas clave-valor separadas por el carácter <em>&amp;</em>, por ejemplo: «edad=18&amp;nombre=Pepa&amp;apellidos=Marín».</p>
+</div></blockquote>
+</li>
+<li><p>anchor</p>
+<blockquote>
+<div><p>enlace interno a la página.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p>Sobre las URL tienes que tener presente los siguientes puntos:</p>
+<ul class="simple">
+<li><p>El puerto es opcional si se emplea al puerto por defecto del protocolo utilizado.</p></li>
+<li><p>No todos los recursos necesitan variables.</p></li>
+<li><p>El anchor solo se pone en casos muy concretos que iremos viendo.</p></li>
+</ul>
+</div>
+<p>Ejemplos de URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">ieslaencanta</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">web</span><span class="o">/</span>
+
+<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">ieslaencanta</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">web</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">php</span><span class="o">/</span><span class="n">noticias</span>
+
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">stable</span><span class="o">/</span><span class="n">amd64</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">es</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<section id="analisis-de-una-url">
+<h3>Análisis de una URL<a class="headerlink" href="#analisis-de-una-url" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Dada la siguiente URL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://www.ejemplo.com:80/paginas/datos/miperfil.html?key1=value1&amp;key2=value2#AlgunLugarEnElDocumento
+</pre></div>
+</div>
+<p>estas serían las partes en que se divide:</p>
+<ul class="simple">
+<li><p><strong>http</strong> protocolo</p></li>
+<li><p><strong>www.ejemplo.com</strong> dirección o nombre de dominio</p></li>
+<li><p><strong>80</strong> puerto (en este ejemplo no hace falta indicar el puerto ya que estamos usando el puerto por defecto del protocolo http)</p></li>
+<li><p><strong>/paginas/datos/miperfil.html</strong> ruta al fichero (se trata de un fichero HTML)</p></li>
+<li><p><strong>?key1=value1&amp;key2=value2</strong> parámetros que se envían al servidor (como ves son parejas de clave-valor)</p></li>
+<li><p><strong>#AlgunLugarEnElDocumento</strong> <em>anchor element</em> interno</p></li>
+</ul>
+<p>Si escribimos esta URL en la barra de direcciones del navegador, accederíamos al <strong>protocolo http</strong> al <strong>puerto 80</strong> de la <strong>máquina www.ejemplo.com</strong>. Dentro de esta máquina debería haber un servidor web sirviendo el contenido de algún directorio de la máquina. Partiendo de ese directorio, el servidor web iría al <strong>directorio «/paginas/datos»</strong> y buscaría el recurso <strong>miperfil.html</strong>.</p>
+</section>
+<section id="url-semanticas">
+<h3>URL semánticas<a class="headerlink" href="#url-semanticas" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Las <strong>URL semánticas</strong> o <strong>URL amigables</strong> son aquellas URL que son, dentro de lo que cabe, entendibles por el usuario. Lejos de las clásicas URL de las páginas dinámicas llenas de variables y números difíciles de recordar, las URL semánticas están formadas con palabras relacionadas con el contenido de la página y fáciles de recordar.</p>
+<p>Te pongo un par de ejemplos para que entiendas la importancia de las URL semánticas frente a las tradicionales.</p>
+<p>Aquí te muestro una URL no semántica:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://www.miweb.com/index.php?seccion=noticias&amp;id_noticia=133&amp;vista=navegador&amp;tema=claro&amp;map=f4ab3cf4ddff00
+</pre></div>
+</div>
+<p>Y aquí tienes una URL semántica:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">miweb</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">noticias</span><span class="o">/</span><span class="n">url</span><span class="o">-</span><span class="n">semanticas</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>Ambas URL te llevarían al mismo recurso pero la segunda es más fácil de recordar y más <em>amigable</em> para el usuario final.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Las URL semánticas son conocidas en inglés y técnicamente como <strong>RESTful URLs</strong>.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">Ver también</p>
+<p>REST son las siglas del inglés <em>Representational State Transfer</em> (Transferencia de Estado Representacional) y no es más que una serie de principios arquitectónicos alrededor de las tecnologías que usan el protocolo HTTP. Si quieres saber más haz clic aquí: <a class="reference internal" href="#rest" id="id1"><span>[REST]</span></a></p>
+</div>
+</section>
+</section>
+<section id="peticiones-http">
+<h2>Peticiones HTTP<a class="headerlink" href="#peticiones-http" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Las peticiones HTTP (<strong>request</strong>) siguen la siguiente sintaxis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Método</span> <span class="n">SP</span> <span class="n">URL</span> <span class="n">SP</span> <span class="n">Versión</span> <span class="n">Http</span> <span class="n">CRLF</span>
+<span class="p">(</span><span class="n">nombre</span><span class="o">-</span><span class="n">cabecera</span><span class="p">:</span> <span class="n">valor</span><span class="o">-</span><span class="n">cabecera</span> <span class="p">(,</span> <span class="n">valor</span><span class="o">-</span><span class="n">cabecera</span><span class="p">)</span><span class="o">*</span><span class="n">CRLF</span><span class="p">)</span><span class="o">*</span>
+<span class="n">Cuerpo</span> <span class="k">del</span> <span class="n">mensaje</span>
+</pre></div>
+</div>
+<p>Donde:</p>
+<ul>
+<li><p>Los paréntesis indican que lo que hay dentro es opcional.</p></li>
+<li><p>Los asteriscos indican que lo que hay delante de ellos se puede repetir una o más veces.</p></li>
+<li><p><strong>Método</strong> es uno de los métodos (también conocidos como «verbos») del protocolo HTTP e indican la acción a realizar. Los principales «verbos» son:</p>
+<blockquote>
+<div><p><strong>HEAD</strong>: pide al servidor que le envíe una respuesta idéntica a la que enviaría a una petición GET pero sin el cuerpo de la respuesta.</p>
+<p><strong>GET</strong>: pide al servidor que le envíe un recurso.</p>
+<p><strong>POST</strong>: envía datos al servidor para que sean procesados por el recurso especificado en la petición. Sirve para crear un recurso en el servidor (como si de un <em>insert</em> se tratara).</p>
+<p><strong>PUT</strong>: envía un recurso determinado al servidor para actualizar un recurso (como si de un <em>update</em> se tratara).</p>
+<p><strong>DELETE</strong>: envía una solicitud para eliminar un recurso (como si de un <em>delete</em> se tratara).</p>
+</div></blockquote>
+</li>
+<li><p><strong>SP</strong> es un espacio,</p></li>
+<li><p><strong>CRLF</strong> es un retorno de carro, es decir, un <em>intro</em>,</p></li>
+<li><p>El cuerpo del mensaje suele quedar vacío a excepción de cuando se envía un formulario, se sube un fichero, etc.</p></li>
+</ul>
+<p>Con un ejemplo se entenderá mejor</p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nf">GET</span> <span class="nn">/web/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="linenos">2</span><span class="na">Host</span><span class="o">:</span> <span class="l">www.ieslaencanta.com:80</span>
+<span class="linenos">3</span><span class="na">User-Agent</span><span class="o">:</span> <span class="l">Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0</span>
+</pre></div>
+</div>
+<p>Estas peticiones HTTP las hace el navegador web cuando navegamos por Internet.</p>
+<p>Para ponerlo en práctica podemos emplear el programa <strong>cURL</strong> de la terminal de GNU/Linux. Te invito a que ejecutes estas dos órdenes y veas el resultado por pantalla:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl -X GET -H <span class="s2">&quot;User-Agent: Firefox&quot;</span> -H <span class="s2">&quot;Accept: text/html&quot;</span> -v <span class="s2">&quot;https://www.ieslaencanta.com&quot;</span> -L
+
+curl -X GET -H <span class="s2">&quot;User-Agent: Firefox&quot;</span> -H <span class="s2">&quot;Accept: text/html&quot;</span> -v <span class="s2">&quot;https://reqbin.com/echo&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="respuestas-http">
+<h2>Respuestas HTTP<a class="headerlink" href="#respuestas-http" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Las respuestas HTTP que envía el servidor (<strong>response</strong>) a las peticiones de un cliente siguen la siguiente sintaxis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Versión</span><span class="o">-</span><span class="n">http</span> <span class="n">SP</span> <span class="n">código</span><span class="o">-</span><span class="n">estado</span> <span class="n">SP</span> <span class="n">frase</span><span class="o">-</span><span class="n">explicación</span> <span class="n">CRLF</span>
+<span class="p">(</span><span class="n">nombre</span><span class="o">-</span><span class="n">cabecera</span><span class="p">:</span> <span class="n">valor</span><span class="o">-</span><span class="n">cabecera</span> <span class="p">(</span><span class="s2">&quot;, &quot;</span> <span class="n">valor</span><span class="o">-</span><span class="n">cabecera</span><span class="p">)</span><span class="o">*</span> <span class="n">CRLF</span><span class="p">)</span><span class="o">*</span>
+<span class="n">Cuerpo</span> <span class="k">del</span> <span class="n">mensaje</span>
+</pre></div>
+</div>
+<p>Donde:</p>
+<ul>
+<li><p>Los paréntesis indican que lo que hay dentro es opcional.</p></li>
+<li><p>Los asteriscos indican que lo que hay delante de ellos se puede repetir una o más veces.</p></li>
+<li><p><strong>Versión-http</strong> indica la versión del protocolo HTTP que está usando el servidor, algo como «HTTP/1.1».</p></li>
+<li><p><strong>código-estado</strong> es un número indicando el estado de la petición. Estos son algunos de los códigos de estado:</p>
+<blockquote>
+<div><p><strong>200</strong> la operación resultó exitosa.
+<strong>302</strong> la operación ha resultado en una redirección exitosa.
+<strong>404</strong> el recurso solicitado no se encuentra en el servidor.
+<strong>500</strong> error interno en el servidor.</p>
+</div></blockquote>
+</li>
+<li><p><strong>SP</strong> es un espacio,</p></li>
+<li><p><strong>CRLF</strong> es un retorno de carro, es decir, un <em>intro</em>,</p></li>
+<li><p>El cuerpo del mensaje es el resultado que envía el servidor: la página web HTML, un documento de estilos CSS, una imagen, etc.</p></li>
+</ul>
+<p>Con un ejemplo se entenderá mejor:</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Respuesta a la petición <strong>https://reqbin.com/echo</strong></span><a class="headerlink" href="#id4" title="Enlace permanente a este código fuente">#</a></div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>HTTP/3 200 OK
+<span class="linenos">2</span>content-type text/html; charset=utf-8
+<span class="linenos">3</span>access-control-allow-origin *
+<span class="linenos">4</span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;&lt;</span><span class="nt">head</span><span class="p">&gt;&lt;</span><span class="nt">title</span><span class="p">&gt;</span>ReqBin Echo<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;ReqBin Echo Interface&quot;</span><span class="p">&gt;&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width&quot;</span><span class="p">&gt;&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;shortcut icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/static/favicon.ico&quot;</span><span class="p">&gt;&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="nt">body</span> <span class="p">{</span><span class="k">font-size</span><span class="p">:</span> <span class="mf">1.5</span><span class="kt">rem</span><span class="p">;}</span> <span class="nt">li</span> <span class="p">{</span><span class="k">margin</span><span class="p">:</span> <span class="mf">0.3</span><span class="kt">rem</span><span class="p">;}</span> <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;&lt;/</span><span class="nt">head</span><span class="p">&gt;&lt;</span><span class="nt">body</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>ReqBin Echo<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Simple echo interface for HTTP methods.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>https://reqbin.com/echo/get/json<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>https://reqbin.com/echo/post/json<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>https://reqbin.com/echo/head/json<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>https://reqbin.com/echo/get/xml<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>https://reqbin.com/echo/post/xml<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>https://reqbin.com/echo/post/form<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="bibliografia-y-referencias">
+<h2>Bibliografía y referencias<a class="headerlink" href="#bibliografia-y-referencias" title="Enlazar permanentemente con este título">#</a></h2>
+<p><a class="reference external" href="https://developer.mozilla.org/es/docs/Learn/Common_questions/What_is_a_URL">Mozilla Developer. ¿Qués es una URL?</a></p>
+<dl class="citation">
+<dt class="label" id="rest"><span class="brackets"><a class="fn-backref" href="#id1">REST</a></span></dt>
+<dd><p><a class="reference external" href="https://es.wikipedia.org/wiki/Transferencia_de_Estado_Representacional">¿Qué significa y qué es REST?</a></p>
+</dd>
+</dl>
+<p><a class="reference external" href="https://developer.mozilla.org/es/docs/Web/HTTP/Status">Mozilla Developer. Códigos de estado HTTP</a></p>
+<p><a class="reference external" href="https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP">Wikipedia. Códigos de estado HTTP</a></p>
+</section>
 </section>
 
         </article>
@@ -205,14 +468,14 @@
         
         <div class="related-pages">
           
-          <a class="prev-page" href="arquitecturas.html">
+          <a class="prev-page" href="arquitectura_web.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Arquitectura cliente/servidor</div>
+                <div class="title">Arquitectura Web</div>
                 
               </div>
             </a>
@@ -235,8 +498,35 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contenidos
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">El protocolo HTTP</a><ul>
+<li><a class="reference internal" href="#caracteristicas-del-protocolo-http">Características del protocolo HTTP</a></li>
+<li><a class="reference internal" href="#url">URL</a><ul>
+<li><a class="reference internal" href="#analisis-de-una-url">Análisis de una URL</a></li>
+<li><a class="reference internal" href="#url-semanticas">URL semánticas</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#peticiones-http">Peticiones HTTP</a></li>
+<li><a class="reference internal" href="#respuestas-http">Respuestas HTTP</a></li>
+<li><a class="reference internal" href="#bibliografia-y-referencias">Bibliografía y referencias</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -246,6 +536,7 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
+    <script src="_static/tabs.js"></script>
     <script src="_static/translations.js"></script>
     </body>
 </html>

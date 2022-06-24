@@ -1,9 +1,9 @@
-============================================
-Arquitecturas y Herramientas de Programación
-============================================
+================
+Arquitectura Web
+================
 
 .. toctree::
     :maxdepth: 1
 
-    arquitecturas
+    arquitectura_web
     http

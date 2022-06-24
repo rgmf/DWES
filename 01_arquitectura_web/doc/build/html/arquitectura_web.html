@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="El protocolo HTTP" href="http.html" /><link rel="prev" title="Arquitecturas y Herramientas de Programación" href="index.html" />
+<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="El protocolo HTTP" href="http.html" /><link rel="prev" title="Arquitectura Web" href="index.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.04.1"/>
-        <title>Arquitectura cliente/servidor - Arquitecturas y Herramientas de Programación Web</title>
+        <title>Arquitectura Web - Arquitectura Web</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
@@ -127,7 +127,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Arquitecturas y Herramientas de Programación Web</div></a>
+      <a href="index.html"><div class="brand">Arquitectura Web</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -150,7 +150,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">Arquitecturas y Herramientas de Programación Web</span>
+  <span class="sidebar-brand-text">Arquitectura Web</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Búsqueda name="q" aria-label="Búsqueda">
@@ -159,7 +159,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Arquitectura cliente/servidor</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Arquitectura Web</a></li>
 <li class="toctree-l1"><a class="reference internal" href="http.html">El protocolo HTTP</a></li>
 </ul>
 
@@ -194,46 +194,31 @@
           </label>
         </div>
         <article role="main">
-          <section id="arquitectura-cliente-servidor">
-<h1>Arquitectura cliente/servidor<a class="headerlink" href="#arquitectura-cliente-servidor" title="Enlazar permanentemente con este título">#</a></h1>
-<p>En esta arquitectura las tareas se reparten entre dos actores:</p>
-<dl>
-<dt><strong>Cliente</strong></dt><dd><p>Los clientes realizan peticiones y reciben las respuestas con los resultados a dichas peticiones.</p>
-<p>Se encargan de ofrecer una interfaz al usuario, es la parte que maneja el usuario final.</p>
-</dd>
-<dt><strong>Servidor</strong></dt><dd><p>Los servidores están a la escucha de las peticiones de los clientes. Cuando reciben una petición entonces realizan una acción y devuelven un resultado.</p>
-<p>Se encarga, pues, de la lógica del sistema.</p>
-</dd>
-</dl>
-<p>Cuando hablamos de cliente y de servidor nos estamos refiriendo, de forma general, tanto al software como al hardware.</p>
-<p>La arquitectura cliente/servidor no es exclusiva del desarrollo web y es utilizada por multitud de aplicaciones. Algunos ejemplos son:</p>
-<ul class="simple">
-<li><p>Los servicios de nube o almacenamiento de archivos en red.</p></li>
-<li><p>El correo electrónico.</p></li>
-<li><p>Servicios de impresión en red.</p></li>
-<li><p>La Web o WWW (<em>World Wide Web</em>).</p></li>
-</ul>
-<p>A los servidores se les suele dar un nombre relacionado con el servicio al que atienden: servidores de archivo, servidores de correo, servidores de impresión o servidores web, en los ejemplos listados arriba.</p>
-<p>En el caso que nos ocupa, el desarrollo web, los clientes solicitan que se les sirva una página web para visualizarla. En este contexto, a la solicitud que hacen los clientes se les denomina <strong>petición</strong> (<em>request</em>) y a lo que devuelve el servidor se le llama <strong>respuesta</strong> (<em>response</em>).</p>
-<p>Lo normal es que hayan muchos clientes haciendo peticiones a un servidor, por tanto el servidor tiene que estar preparado para soportar una determinada carga de peticiones que tiene que ser medida cuando se implanta. Cuando un servidor no puede hacerse cargo de todas las peticiones se puede quedar <em>colgado</em> y, en este caso, quedar el servicio interrumpido hasta que se solucione el problema (esta es la base de los ataques DDoS o ataques de denegación de servicio: se lanzan gran cantidad de peticiones a un servidor hasta «tirarlo»).</p>
-<figure class="align-default" id="id3">
-<a class="reference internal image-reference" href="_images/client_server_model.svg"><img alt="_images/client_server_model.svg" src="_images/client_server_model.svg" width="100%" /></a>
-<figcaption>
-<p><span class="caption-text">Arquitectura cliente/servidor</span><a class="headerlink" href="#id3" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<section id="la-web">
-<span id="id1"></span><h2>La Web<a class="headerlink" href="#la-web" title="Enlazar permanentemente con este título">#</a></h2>
-<p>La <em>World Wide Web</em> (WWW), normalmente conocida como <strong>Web</strong>, es una de las plataformas de software dominantes en la actualidad, sino la más. Es un espacio de información donde documentos y otros recursos web pueden ser accedidos a través de Internet utilizando navegadores web.</p>
+          <section id="arquitectura-web">
+<h1>Arquitectura Web<a class="headerlink" href="#arquitectura-web" title="Enlazar permanentemente con este título">#</a></h1>
+<p>La <em>World Wide Web</em> (WWW), normalmente conocida como <strong>Web</strong>, es una de las plataformas de software dominantes en la actualidad, sino la que más. Es un espacio de información donde documentos y otros recursos web pueden ser accedidos a través de Internet utilizando navegadores web.</p>
 <div class="admonition seealso">
 <p class="admonition-title">Ver también</p>
-<p>El informático inglés Tim Berners-Lee inventó la Web en 1989 mientras trabajaba en el CERN en Suiza. En 1990 desarrolló los fundamentos de la Web: HTTP, HTML, un navegador web, un servidor y el primero sitio web. <a class="reference internal" href="#historiaweb" id="id2"><span>[HistoriaWeb]</span></a>.</p>
+<p>El informático inglés Tim Berners-Lee inventó la Web en 1989 mientras trabajaba en el CERN en Suiza. En 1990 desarrolló los fundamentos de la Web: HTTP, HTML, un navegador web, un servidor y el primero sitio web. <a class="reference internal" href="#historiaweb" id="id1"><span>[HistoriaWeb]</span></a>.</p>
 </div>
-<p>La Web emplea la arquitectura cliente/servidor y el <strong>protocolo HTTP</strong> (o HTTPS) para la comunicación entre estos dos actores: cliente y servidor.</p>
+<p>El desarrollo web se basa en la <strong>arquitectura cliente/servidor</strong>, donde las tareas se reparten entre dos actores: el cliente y el servidor. Estos dos actores hacen uso de un protocolo para la comunicación: <strong>HTTP</strong>.</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="_images/client_server_model.svg"><img alt="_images/client_server_model.svg" src="_images/client_server_model.svg" width="100%" /></a>
+<figcaption>
+<p><span class="caption-text">Arquitectura cliente/servidor</span><a class="headerlink" href="#id4" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>El funcionamiento básico de esta arquitectura se resume en los siguientes apartados.</p>
 <section id="cliente">
-<h3>Cliente<a class="headerlink" href="#cliente" title="Enlazar permanentemente con este título">#</a></h3>
-<p>Un cliente puede ser, a nivel de <strong>hardware</strong>, un PC, portátil, <em>smartphone</em>, o cualquier otro dispositivo. En cuanto al <strong>software</strong>, en el contexto de la Web, normalmente es un navegador web como <em>Firefox</em>, <em>Google Chrome</em>, <em>Microsoft Edge</em>, u otros.</p>
-<p>Los navegadores web usan el protocolo HTTP (o HTTPS) para solicitar a un servidor web una página web, que no es más que un documento HTML. Los navegadores web interpretan y renderizan el documento HTML recibido para mostrar el contenido.</p>
+<h2>Cliente<a class="headerlink" href="#cliente" title="Enlazar permanentemente con este título">#</a></h2>
+<ul class="simple">
+<li><p>Los clientes realizan peticiones y reciben las respuestas con los resultados a dichas peticiones.</p></li>
+<li><p>A estas peticiones se las conoce como <strong>request</strong>.</p></li>
+<li><p>Normalmente, las respuestas que reciben son documentos <strong>HTML</strong>, aunque en el caso de servicios web las respuestas son en forma de documentos <strong>XML</strong> o <strong>JSON</strong>.</p></li>
+<li><p>Ofrecen una interfaz al usuario, es el programa que maneja el usuario final.</p></li>
+<li><p>Las tecnologías que se usan en el lado del cliente son: HTML, CSS y JavaScript.</p></li>
+</ul>
+<p>Normalmente, en la Web, esta interfaz es una navegador web como <em>Firefox</em>, <em>Chrome</em> o <em>Edge</em>, entre otros. Estos clientes son programas instalados en dispositivos de usuario como un PC, portátil o <em>smartphone</em>, por ejemplo.</p>
 <div class="admonition tip">
 <p class="admonition-title">Truco</p>
 <p>Si quieres ver el contenido, el documento base HTML, de una página web, usa el navegador web para acceder a la página web, haz clic con el botón derecho sobre la página y elige la opción «Ver código fuente», o algo similar, como puedes ver en la captura <a class="reference internal" href="#ver-codigo-fuente">Ver código fuente</a>.</p>
@@ -246,14 +231,14 @@
 </div>
 <p>Existen otros programas, al margen de los navegadores web, que permiten hacer peticiones a servidores web. Por ejemplo, se tiene el programa <em>curl</em> que podemos usar en la <em>terminal</em>.</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UGV0aWNpw7NuICgqcmVxdWVzdCop" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UGV0aWNpw7NuICgqcmVxdWVzdCop" name="UGV0aWNpw7NuICgqcmVxdWVzdCop" role="tab" tabindex="0">Petición (<em>request</em>)</button><button aria-controls="panel-0-UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" name="UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" role="tab" tabindex="-1">Respuesta (<em>response</em>)</button></div><div aria-labelledby="tab-0-UGV0aWNpw7NuICgqcmVxdWVzdCop" class="sphinx-tabs-panel group-tab" id="panel-0-UGV0aWNpw7NuICgqcmVxdWVzdCop" name="UGV0aWNpw7NuICgqcmVxdWVzdCop" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Ejemplo de ejecución de curl para obtener la página de noticias del IES La Encantá</span><a class="headerlink" href="#id4" title="Enlace permanente a este código fuente">#</a></div>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UGV0aWNpw7NuICgqcmVxdWVzdCop" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-UGV0aWNpw7NuICgqcmVxdWVzdCop" name="UGV0aWNpw7NuICgqcmVxdWVzdCop" role="tab" tabindex="0">Petición (<em>request</em>)</button><button aria-controls="panel-0-UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" name="UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" role="tab" tabindex="-1">Respuesta (<em>response</em>)</button></div><div aria-labelledby="tab-0-UGV0aWNpw7NuICgqcmVxdWVzdCop" class="sphinx-tabs-panel group-tab" id="panel-0-UGV0aWNpw7NuICgqcmVxdWVzdCop" name="UGV0aWNpw7NuICgqcmVxdWVzdCop" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Ejemplo de ejecución de curl para obtener la página de noticias del IES La Encantá</span><a class="headerlink" href="#id5" title="Enlace permanente a este código fuente">#</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>curl http://www.ieslaencanta.com/web/index.php/noticias
 </pre></div>
 </div>
 </div>
-</div><div aria-labelledby="tab-0-UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" name="UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Respuesta (se muestran las primeras líneas)</span><a class="headerlink" href="#id5" title="Enlace permanente a este código fuente">#</a></div>
+</div><div aria-labelledby="tab-0-UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" name="UmVzcHVlc3RhICgqcmVzcG9uc2UqKQ==" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Respuesta (se muestran las primeras líneas)</span><a class="headerlink" href="#id6" title="Enlace permanente a este código fuente">#</a></div>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
 <span class="linenos"> 2</span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">prefix</span><span class="o">=</span><span class="s">&quot;og: http://ogp.me/ns#&quot;</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es-es&quot;</span> <span class="na">dir</span><span class="o">=</span><span class="s">&quot;ltr&quot;</span>  <span class="na">data-config</span><span class="o">=</span><span class="s">&#39;{&quot;style&quot;:&quot;default&quot;,&quot;layout&quot;:null}&#39;</span><span class="p">&gt;</span>
 <span class="linenos"> 3</span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -269,13 +254,21 @@
 </div>
 </div>
 </div></div>
-<p>Las tecnologías que se usan en el lado del cliente son: HTML, CSS y JavaScript.</p>
 </section>
 <section id="servidor">
-<h3>Servidor<a class="headerlink" href="#servidor" title="Enlazar permanentemente con este título">#</a></h3>
-<p>Los servidores web suelen ser, a nivel <strong>hardware</strong>, ordenadores con mayor capacidad de almacenamiento, memoria y procesamiento. Por parte del <strong>software</strong> las opciones se multiplican ya que depende de las tecnologías y lenguajes que se elijan para desarrollar la aplicación web en cuestión: PHP, Java, Python, etc.</p>
-<p>En los servidores para aplicaciones web se necesitan, al menos, dos tipos de programas: un servidor web y un servidor de base de datos.</p>
-<p>El servidor web es un programa que está a la escucha permanentemente para responder a las peticiones que reciben de los clientes, a través del protocolo HTTP (o HTTPS). Las respuestas de los servidores web con documentos HTML. Ejemplos de servidores web:</p>
+<h2>Servidor<a class="headerlink" href="#servidor" title="Enlazar permanentemente con este título">#</a></h2>
+<ul class="simple">
+<li><p>Los servidores están a la escucha de las peticiones de los clientes. Es como si estuviera dentro de un <em>bucle infinito</em> escuchando sin parar.</p></li>
+<li><p>Es un programa multitarea porque tiene que ser capaz de recibir peticiones de muchos clientes.</p></li>
+<li><p>Cuando reciben una petición entonces realizan una acción y devuelven un resultado.</p></li>
+<li><p>Al resultado que devuelve un servidor se le conoce como <strong>response</strong>.</p></li>
+<li><p>Esta respuesta suele ser en formato <strong>HTML</strong> pero también puede ser en formato <strong>XML</strong> o <strong>JSON</strong> en el caso de los servicios web.</p></li>
+<li><p>Se encarga, pues, de la lógica del sistema.</p></li>
+<li><p>Los servidores son programas instalados en equipos que suelen ser más potentes, con más memoria y más capacidad de almacenamiento secundarios que los ordenadores que normalmente usamos los usuarios finales.</p></li>
+<li><p>Las tecnologías que se usan en el lado del servidor son, entre otras: PHP, J2EE (Java), .NET o Python.</p></li>
+<li><p>También se suelen usar servidores de bases de datos.</p></li>
+</ul>
+<p>Ejemplos de servidores web:</p>
 <dl class="simple">
 <dt><strong>Apache</strong></dt><dd><p>Se trata de uno de los software de servidor web más populares. Se usa con lenguajes como PHP, es software libre y desarrollado por la Fundación Apache.</p>
 </dd>
@@ -308,42 +301,15 @@
 <a class="reference internal image-reference" href="_images/servidores_bd_logo.png"><img alt="_images/servidores_bd_logo.png" src="_images/servidores_bd_logo.png" style="width: 80%;" /></a>
 </figure>
 </section>
-</section>
-<section id="protocolo-http-y-documentos-html">
-<h2>Protocolo HTTP y documentos HTML<a class="headerlink" href="#protocolo-http-y-documentos-html" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Como se ha comentado en el apartado <a class="reference internal" href="#la-web"><span class="std std-ref">sobre la Web</span></a> el protocolo que se utiliza para la comunicación entre cliente y servidor se denomina <strong>HTTP</strong> (y su versión cifrada <strong>HTTPS</strong>).</p>
-<div class="admonition important">
-<p class="admonition-title">Importante</p>
-<p>Hoy en día todos los servidores web deben usar la versión cifrada de HTTP, es decir, HTTPS. La diferencia básica entre ambos protocolos es que con HTTPS las peticiones del cliente y las respuestas de los servidores viajan cifradas, añadiendo cierta seguridad en las comunicaciones Web.</p>
-</div>
-<p><strong>HTTP</strong> es un acrónimo para <em>HyperText Transfer Protocol</em> (protocolo de transfencia de hipertexto). El hipertexto son las páginas web que no son más que ficheros <strong>HTML</strong>, acrónimo para <em>HyperText Markup Language</em> (lenguaje de marcas de hipertexto).</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">Ejemplo de página web en HTML</span><a class="headerlink" href="#id6" title="Enlace permanente a este código fuente">#</a></div>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ejemplo de página web<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Mi primera página web<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>¡Hola Mundo!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-</div>
-<p>Más adelante entraré de lleno en el protocolo HTTP.</p>
-</section>
 <section id="front-end-back-end-full-stack">
 <h2>Front-end, Back-end, Full stack<a class="headerlink" href="#front-end-back-end-full-stack" title="Enlazar permanentemente con este título">#</a></h2>
 <p>Teniendo en cuenta el lado en que se ubican las tecnologías y para qué se utilizan éstas, actualmente se habla de 3 perfiles diferentes en el ámbito del desarrollo web:</p>
 <dl>
 <dt><strong>Front-end</strong></dt><dd><p>La gente que trabaja en el front-end se encargan del diseño y de la maquetación de la aplicación web, así como de preocuparse de la correcta presentación en cualquier tipo de dispositivos e incluso del posicionamiento en buscadores.</p>
-<p>Dicho de otro modo, estos profesionales se encargan del desarrollo en el lado del cliente, y vosotros trabajaréis en esta parte en el ḿodulo de <em>Desarrollo web en entorno cliente</em>.</p>
+<p>Dicho de otro modo, estos profesionales se encargan del desarrollo en el lado del cliente, y vosotros trabajaréis en esta parte en el módulo de <em>Desarrollo web en entorno cliente</em>.</p>
 <p>Aquí se emplean 3 tecnologías como son HTML, CSS y Javascript.</p>
 </dd>
-<dt><strong>Back-end</strong></dt><dd><p>Se trata del desarrollo en el lado del servidor que estudiaremos en este módulo. Los profesionales que se dedican al desarrollo en este área lo hacen con tecnologías como PHP, JSP (Java) o Python.</p>
+<dt><strong>Back-end</strong></dt><dd><p>Se trata del desarrollo en el lado del servidor que estudiaremos en este módulo. Los profesionales que se dedican al desarrollo en este área lo hacen con tecnologías como PHP, J2EE (Java), .NET o Python.</p>
 <p>Además, aquí se tiene que instalar y administrar el servidor web y el servidor de la base de datos (a menudo alojados en diferentes servidores).</p>
 <p>En este módulo aprenderás a instalar y montar servidores web y de bases de datos de manera básica para poder programar aplicaciones web y en el módulo <em>Despliegue de aplicaciones web</em> profundizarás en este apartado.</p>
 </dd>
@@ -352,16 +318,61 @@
 </dd>
 </dl>
 </section>
+<section id="estandarizacion-y-desarrollo-de-las-tecnologias-web">
+<h2>Estandarización y desarrollo de las tecnologías web<a class="headerlink" href="#estandarizacion-y-desarrollo-de-las-tecnologias-web" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Aquí tenemos que dividir los estándares en dos grupos:</p>
+<ul class="simple">
+<li><p>Los estándares de Internet.</p></li>
+<li><p>Los estándares web.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p>Hay que diferenciar entre Internet y la Web.</p>
+<p>Internet es una red mundial y, por tanto, consta de cables, <em>routers</em>, <em>switches</em> y otros equipos de red.</p>
+<p>Sobre esta red que conocemos como Internet (<em>hardware</em>) se han desarrollado multitud de servicios (<em>software</em>) como son:</p>
+<ul class="simple">
+<li><p>La Web o WWW.</p></li>
+<li><p>E-mail.</p></li>
+<li><p>Telefonía IP.</p></li>
+<li><p><em>Streaming</em>.</p></li>
+<li><p>Etc.</p></li>
+</ul>
+<p>Así pues, como ya intuirás, la Web es tan solo una aplicación más que funciona sobre la red Internet.</p>
+</div>
+<section id="estandares-de-internet">
+<h3>Estándares de Internet<a class="headerlink" href="#estandares-de-internet" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Los estándares de Internet como HTTP, TCP o IP, son desarrollados por el Grupo de Trabajo de Ingeniería de Internet, o <strong>IETF</strong> de sus siglas en inglés <em>Internet Engineering Task Force</em>. Este es el organismo que regula las propuestas y los estándares de Internet, conocidos como <strong>RFC</strong> (<em>Request For Comment</em>). Así, los estándares los podemos encontrar en estos RFC.</p>
+<p>La IETF es una institución sin fines de lucro y abierta a la participación de cualquier persona, cuyo objetivo es velar para que la arquitectura de Internet y los protocolos que la conforman funcionen correctamente. Se la considera como la organización con más autoridad para establecer modificaciones de los parámetros técnicos bajo los que funciona la red. El IETF se compone de técnicos y profesionales en el área de redes, tales como investigadores, integradores, diseñadores de red, administradores, vendedores, entre otros.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Ver también</p>
+<p>Algunos de los RFC más importantes son los siguientes: <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2616.html"><strong>RFC 2616</strong></a> donde se detalla el protocolo HTTP; <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc791.html"><strong>RFC 791</strong></a> donde se encuentra el protocolo IP; <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc959.html"><strong>RFC 959</strong></a> donde se describe el protocolo TCP.</p>
+</div>
+</section>
+<section id="estandares-web">
+<h3>Estándares Web<a class="headerlink" href="#estandares-web" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Las tecnologías web son estandarizadas por un consorcio denominado <strong>W3C</strong> (<em>World Wide Web Consortium</em>) <a class="reference internal" href="#w3c" id="id2"><span>[W3C]</span></a>. Esto garantiza el crecimiento de la Web a largo plazo. Algunas de las tecnologías web que estandariza este consorcio son: HTML, CSS o JavaScript.</p>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p>Puedes encontrar gran cantidad de recursos de aprendizaje en la web <strong>W3C Schools</strong> <a class="reference internal" href="#w3cschools" id="id3"><span>[W3CSchools]</span></a>.</p>
+</div>
+</section>
+</section>
 <section id="resumiendo">
 <h2>Resumiendo<a class="headerlink" href="#resumiendo" title="Enlazar permanentemente con este título">#</a></h2>
-<p>El desarrollo web se basa en la arquitectura cliente/servidor donde se usa el protocolo HTTP para que los clientes hagan peticiones (<em>request</em>) a los servidores que devuelven respuestas (<em>response</em>) en formato HTML.</p>
+<p>El desarrollo web se basa en la arquitectura cliente/servidor donde se usa el protocolo HTTP para que los clientes hagan peticiones (<em>request</em>) a los servidores que devuelven respuestas (<em>response</em>) en formato HTML (para servicios web se emplea el formato XML o JSON).</p>
 <p>El desarrollo se divide entre la parte del cliente, el front-end, y la parte del servidor, el back-end.</p>
 </section>
 <section id="citas-notas-y-bibliografia">
 <h2>Citas, notas y bibliografía<a class="headerlink" href="#citas-notas-y-bibliografia" title="Enlazar permanentemente con este título">#</a></h2>
 <dl class="citation">
-<dt class="label" id="historiaweb"><span class="brackets"><a class="fn-backref" href="#id2">HistoriaWeb</a></span></dt>
+<dt class="label" id="historiaweb"><span class="brackets"><a class="fn-backref" href="#id1">HistoriaWeb</a></span></dt>
 <dd><p>Historia de la Web &lt;<a class="reference external" href="https://es.wikipedia.org/wiki/World_Wide_Web#Historia">https://es.wikipedia.org/wiki/World_Wide_Web#Historia</a>&gt;</p>
+</dd>
+<dt class="label" id="w3c"><span class="brackets"><a class="fn-backref" href="#id2">W3C</a></span></dt>
+<dd><p>Página web oficial &lt;<a class="reference external" href="https://www.w3.org/">https://www.w3.org/</a>&gt;</p>
+</dd>
+<dt class="label" id="w3cschools"><span class="brackets"><a class="fn-backref" href="#id3">W3CSchools</a></span></dt>
+<dd><p>W3C Schools &lt;<a class="reference external" href="https://www.w3schools.com/">https://www.w3schools.com/</a>&gt;</p>
 </dd>
 </dl>
 </section>
@@ -423,14 +434,15 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Arquitectura cliente/servidor</a><ul>
-<li><a class="reference internal" href="#la-web">La Web</a><ul>
+<li><a class="reference internal" href="#">Arquitectura Web</a><ul>
 <li><a class="reference internal" href="#cliente">Cliente</a></li>
 <li><a class="reference internal" href="#servidor">Servidor</a></li>
+<li><a class="reference internal" href="#front-end-back-end-full-stack">Front-end, Back-end, Full stack</a></li>
+<li><a class="reference internal" href="#estandarizacion-y-desarrollo-de-las-tecnologias-web">Estandarización y desarrollo de las tecnologías web</a><ul>
+<li><a class="reference internal" href="#estandares-de-internet">Estándares de Internet</a></li>
+<li><a class="reference internal" href="#estandares-web">Estándares Web</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#protocolo-http-y-documentos-html">Protocolo HTTP y documentos HTML</a></li>
-<li><a class="reference internal" href="#front-end-back-end-full-stack">Front-end, Back-end, Full stack</a></li>
 <li><a class="reference internal" href="#resumiendo">Resumiendo</a></li>
 <li><a class="reference internal" href="#citas-notas-y-bibliografia">Citas, notas y bibliografía</a></li>
 </ul>
