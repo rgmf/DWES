@@ -254,6 +254,14 @@ Con un ejemplo se entenderá mejor:
     access-control-allow-origin *
     <html><head><title>ReqBin Echo</title><meta name="description" content="ReqBin Echo Interface"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="shortcut icon" href="/static/favicon.ico"><style>body {font-size: 1.5rem;} li {margin: 0.3rem;} </style></head><body> <h1>ReqBin Echo</h1> <p>Simple echo interface for HTTP methods.</p> <ul> <li>https://reqbin.com/echo/get/json</li> <li>https://reqbin.com/echo/post/json</li> <li>https://reqbin.com/echo/head/json</li> <li>https://reqbin.com/echo/get/xml</li> <li>https://reqbin.com/echo/post/xml</li> <li>https://reqbin.com/echo/post/form</li> </ul></body></html>
 
+Páginas web estáticas y dinámicas
+=================================
+Una página web puede ser estática o dinámica en función de si su contenido se adapta o cambia en función de una serie de variables como el usuario que ha iniciado sesión, la localización del usuario, configuración, etc.
+
+Las páginas web estáticas no cambian y están escritas con tecnologías del lado del cliente: HTML, CSS y JavaScript.
+
+Las páginas web dinámicas son generadas en el servidor con tecnologías como PHP, así pues, cada vez que se solicita una página web que es dinámica su contenido podría ser diferente entre petición y petición.
+
 Bibliografía y referencias
 ==========================
 `Mozilla Developer. ¿Qués es una URL? <https://developer.mozilla.org/es/docs/Learn/Common_questions/What_is_a_URL>`__
