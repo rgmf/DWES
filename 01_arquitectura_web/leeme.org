@@ -1,0 +1,19 @@
+* Recursos para este tema
+- En la carpeta *doc* está todo el material y prácticas a realizar (en formato ReStructured Text).
+- El fichero *Debian.ova* es una máquina virtual, en VirtualBox, que compartiré con el alumnado para que puedan realizar el Lab 1.
+- El fichero *corregir_practica1.py* es un script en Python para corregir la Práctica 1. A este script hay que pasarle el fichero de texto con los nombres de usuarios de GitHub de los alumnos (uno por línea) y la ruta que sirve Apache.
+
+* Antes de empezar
+** Crear un repositorio en GitHub
+Se tienen que crear un repositorio en GitHub llamado *dwes-tema1* donde van a tener que subir la práctica 1.
+
+Pasos para empezar un repositorio en GitHub:
+- Entra en GitHub y crea un repositorio con nombre *dwes-tema1* sin añadir README ni licencia.
+- Crea una carpeta en tu ordenador con el nombre *dwes-tema1* y entre en ella.
+- Copia tus ficheros a la carpeta *dwes-tema1*.
+- git init :: para crear el repositorio.
+- git add :: con los ficheros a añadir para añadirlos al seguimiento del repositorio.
+- git commit -m "Primer commit" :: crea el primer commit.
+- git branch -M main :: establece el nombre de tu rama principal con main.
+- git remote add origin git@github.com:rgmf/dwes-tema1.git :: añade el repositorio remoto.
+- git push -u origin main :: empuja los cambios al repositorio remoto.

@@ -1,0 +1,32 @@
+[
+    {
+        "http://www.ejemplo.com/index.html": ""
+    },
+    {
+        "http://www.ejemplo.com/paginas/index.html": ""
+    },
+    {
+        "http://www.ejemplo.com/web/css/base.css": ""
+    },
+    {
+        "http://www.ejemplo.com/web/img/logo/grande.jpg": ""
+    },
+    {
+        "http://www.ejemplo.com/web/img/logo/editado/peque.jpeg": ""
+    },
+    {
+        "http://www.ejemplo.com/a/b/c/d.html": ""
+    },
+    {
+        "http://www.ejemplo.com/a/b/c/d.html": ""
+    },
+    {
+        "http://www.ejemplo.com/grupos.txt": ""
+    },
+    {
+        "http://www.ejemplo.com/daw/videos/presentacion.webm": ""
+    },
+    {
+        "http://www.ejemplo.com/daw/alus/matricula/20/todos.html": ""
+    }
+]
