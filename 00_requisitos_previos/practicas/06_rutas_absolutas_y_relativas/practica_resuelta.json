@@ -1,0 +1,91 @@
+[
+    {
+        "pregunta": "Ruta relativa a la carpeta firefox desde etc",
+        "respuesta": [
+            "firefox",
+            "firefox/"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa al fichero cancion.mp3 desde Descargas",
+        "respuesta": [
+            "cancion.mp3"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa al fichero cancion.mp3 desde roman",
+        "respuesta": [
+            "Descargas/cancion.mp3"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa al fichero cancion.mp3 desde gines",
+        "respuesta": [
+            "../roman/Descargas/cancion.mp3"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa a la raíz de la jerarquia desde la carpeta Descargas",
+        "respuesta": [
+            "../../..",
+            "../../../"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa al fichero anacron desde la carpeta personal del usuario roman",
+        "respuesta": [
+            "../../etc/cron.d/anacron"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa al fichero practica1.odt desde la carpeta trabajos",
+        "respuesta": [
+            "../informatica/practica1.odt"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa a la carpeta home desde roman",
+        "respuesta": [
+            "..",
+            "../"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa al fichero img.jpg desde la carpeta informatica",
+        "respuesta": [
+            "../../Descargas/img.jpg"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa al fichero php desde la carpeta trabajos",
+        "respuesta": [
+            "../../../../etc/cron.d/php"
+        ]
+    },
+    {
+        "pregunta": "Ruta absoluta a la carpeta etc",
+        "respuesta": [
+            "/etc",
+            "/etc/"
+        ]
+    },
+    {
+        "pregunta": "Ruta absoluta al fichero anacron",
+        "respuesta": [
+            "/etc/cron.d/anacron"
+        ]
+    },
+    {
+        "pregunta": "Ruta absoluta a la carpeta gines",
+        "respuesta": [
+            "/home/gines",
+            "/home/gines/"
+        ]
+    },
+    {
+        "pregunta": "Ruta absoluta al fichero de audio cancion.mp3",
+        "respuesta": [
+            "/home/roman/Descargas/cancion.mp3"
+        ]
+    }
+]

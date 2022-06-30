@@ -1,0 +1,7 @@
+Para las cuestiones necesitan la imagen del árbol de directorios.
+
+Tengo la actividad en formato GIFT de Moodle y en formato JSON.
+
+Además, tengo una actividad de refuerzo por si fuera necesaria en formato GIFT.
+
+Por último, tengo un fichero practica_resuelta.json son la práctica resuelta.

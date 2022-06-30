@@ -1,0 +1,42 @@
+[
+    {
+        "pregunta": "Ruta relativa a la carpeta Imágenes desde /home/roman",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta relativa a la raíz de la jerarquía desde /home/roman",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta relativa al directorio Descargas desde /home/roman",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta relativa al fichero dni.jpg desde /home/roman",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta relativa al documento practica2.odt desde /home/roman",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta relativa a la carpeta home desde /home/roman",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta relativa a la carpeta etc desde /home/roman",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta relativa al fichero anacron desde /home/roman",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta relativa a la carpeta gines desde /home/roman",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta relativa al fichero de audio cancion.mp3 desde /home/roman",
+        "respuesta": ""
+    }
+]

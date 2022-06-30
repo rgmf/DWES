@@ -1,0 +1,68 @@
+[
+    {
+        "pregunta": "Ruta absoluta a la carpeta gines",
+        "respuesta": [
+            "/home/gines",
+            "/home/gines/"
+        ]
+    },
+    {
+        "pregunta": "Ruta absoluta a la raíz de la jerarquía",
+        "respuesta": [
+            "/"
+        ]
+    },
+    {
+        "pregunta": "Ruta absoluta al directorio trabajos",
+        "respuesta": [
+            "/home/roman/Documentos/trabajos",
+            "/home/roman/Documentos/trabajos/"
+        ]
+    },
+    {
+        "pregunta": "Ruta absoluta al fichero crontab",
+        "respuesta": [
+            "/etc/crontab",
+            "/etc/crontab/"
+        ]
+    },
+    {
+        "pregunta": "Ruta absoluta a la carpeta etc",
+        "respuesta": [
+            "/etc",
+            "/etc/"
+        ]
+    },
+    {
+        "pregunta": "Ruta absoluta al directorio roman",
+        "respuesta": [
+            "/home/roman",
+            "/home/roman/"
+        ]
+    },
+    {
+        "pregunta": "Ruta absoluta al fichero practica1.odt",
+        "respuesta": [
+            "/home/roman/Documentos/informatica/practica1.odt"
+        ]
+    },
+    {
+        "pregunta": "Ruta absoluta al directorio Imágenes",
+        "respuesta": [
+            "/home/roman/Imágenes",
+            "/home/roman/Imágenes/"
+        ]
+    },
+    {
+        "pregunta": "Ruta absoluta a la imagen dni.jpg",
+        "respuesta": [
+            "/home/roman/Documentos/dni.jpg"
+        ]
+    },
+    {
+        "pregunta": "Ruta absoluta al fichero de audio cancion.mp3",
+        "respuesta": [
+            "/home/roman/Descargas/cancion.mp3"
+        ]
+    }
+]
