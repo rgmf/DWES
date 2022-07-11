@@ -1,0 +1,68 @@
+[
+    {
+        "pregunta": "Ruta relativa a la carpeta Documentos desde /home/roman",
+        "respuesta": [
+            "Documentos",
+            "Documentos/"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa a la carpeta Imágenes desde /home/roman",
+        "respuesta": [
+            "Imágenes",
+            "Imágenes/"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa al directorio Desktop desde /home/roman",
+        "respuesta": [
+            "Desktop",
+            "Desktop/"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa al fichero img.jpg desde /home/roman",
+        "respuesta": [
+            "Descargas/img.jpg"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa al documento practica1.odt desde /home/roman",
+        "respuesta": [
+            "Documentos/informatica/practica1.odt"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa a la carpeta Descargas desde /home/roman",
+        "respuesta": [
+            "Descargas",
+            "Descargas/"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa a la carpeta trabajos desde /home/roman",
+        "respuesta": [
+            "Documentos/trabajos",
+            "Documentos/trabajos/"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa a la carpeta informatica desde /home/roman",
+        "respuesta": [
+            "Documentos/informatica",
+            "Documentos/informatica/"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa al documento practica2.odt desde /home/roman",
+        "respuesta": [
+            "Documentos/informatica/practica2.odt"
+        ]
+    },
+    {
+        "pregunta": "Ruta relativa al fichero de audio cancion.mp3 desde /home/roman",
+        "respuesta": [
+            "Descargas/cancion.mp3"
+        ]
+    }
+]

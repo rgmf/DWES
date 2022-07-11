@@ -1,0 +1,48 @@
+Ruta absoluta a la carpeta <strong>media</strong> {
+=/media
+=/media/
+}
+
+Ruta absoluta a la raíz de la jerarquía {
+=/
+}
+
+Ruta absoluta al directorio <strong>Escritorio</strong> {
+=/home/roman/Escritorio
+=/home/roman/Escritorio/
+}
+
+Ruta absoluta a la carpeta <strong>bin</strong> que puedes ver dentro de <strong>local</strong> {
+=/usr/local/bin
+=/usr/local/bin/
+}
+
+Ruta absoluta a la carpeta <strong>bin</strong> que ves en <strong>usr</strong> {
+=/usr/bin
+=/usr/bin/
+}
+
+Ruta absoluta al directorio <strong>roman</strong> {
+=/home/roman
+=/home/roman/
+}
+
+Ruta absoluta a la carpeta <strong>local</strong> {
+=/usr/local
+=/usr/local/
+}
+
+Ruta absoluta al directorio <strong>Imágenes</strong> {
+=/home/roman/Imágenes
+=/home/roman/Imágenes/
+}
+
+Ruta absoluta a la carpeta <strong>games</strong> {
+=/usr/local/games
+=/usr/local/games/
+}
+
+Ruta absoluta al directorio <strong>home</strong> {
+=/home
+=/home/
+}

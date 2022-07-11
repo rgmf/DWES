@@ -1,0 +1,39 @@
+Ruta relativa a la carpeta <strong>Documentos</strong> {
+=Documentos
+}
+
+Ruta relativa a la carpeta <strong>Imágenes</strong> {
+=Imágenes
+}
+
+Ruta relativa al directorio <strong>Desktop</strong> {
+=Desktop
+}
+
+Ruta relativa al fichero <strong>img.jpg</strong> {
+=Descargas/img.jpg
+}
+
+Ruta relativa al documento <strong>practica1.odt</strong> {
+=Documentos/informatica/practica1.odt
+}
+
+Ruta relativa a la carpeta <strong>Descargas</strong> {
+=Descargas
+}
+
+Ruta relativa a la carpeta <strong>trabajos</strong> {
+=Documentos/trabajos
+}
+
+Ruta relativa a la carpeta <strong>informatica</strong> {
+=Documentos/informatica
+}
+
+Ruta relativa al documento <strong>practica2.odt</strong> {
+=Documentos/informatica/practica2.odt
+}
+
+Ruta relativa al fichero de audio <strong>cancion.mp3</strong> {
+=Descargas/cancion.mp3
+}

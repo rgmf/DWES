@@ -1,0 +1,5 @@
+Para las cuestiones necesitan la imagen del árbol de directorios. Se indica desde donde parten las rutas relativas.
+
+Tengo la actividad en formato GIFT y en formato JSON.
+
+Por último, tengo un fichero practica_resuelta.json son la práctica resuelta.

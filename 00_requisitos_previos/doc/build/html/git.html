@@ -1,0 +1,401 @@
+<!doctype html>
+<html class="no-js" lang="es">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="Trabajar con GitHub" href="github.html" /><link rel="prev" title="Requisitos Previos" href="index.html" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.04.1"/>
+        <title>Git - Requisitos Previos</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #4a86cf;
+  --color-brand-content: #4a86cf;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Requisitos Previos</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">Requisitos Previos</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Búsqueda name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html">Trabajar con GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica1.html">Práctica 1: Git y GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica2.html">Práctica 2: Git y GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jerarquia_rutas.html">Jerarquía de directorios: rutas absolutas y relativas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica3.html">Práctica 3: rutas absolutas y relativas</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="git">
+<h1>Git<a class="headerlink" href="#git" title="Enlazar permanentemente con este título">#</a></h1>
+<p>Git es un software de <strong>control de versiones</strong> de código abierto y libre, diseñado por <a class="reference external" href="https://es.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a> quien, también, creó Linux.</p>
+<p>Un software de <strong>control de versiones</strong> gestiona los diversos cambios que se realizan en los ficheros fuente de un programa (aunque es extensible a todo tipo de proyectos donde se usen ficheros).</p>
+<p>Dicho sistema te permite regresar a versiones anteriores de tus archivos, regresar a una versión anterior del proyecto completo, comparar cambios a lo largo del tiempo, ver quién modificó por última vez algo que pueda estar causando problemas, ver quién introdujo un problema y cuándo, y mucho más. Usar un sistema de control de versiones también significa generalmente que si arruinas o pierdes archivos, será posible recuperarlos fácilmente.</p>
+<p>En la página web de Git tienes toda la información y documentación que necesitas: <a class="reference external" href="http://git-scm.com/doc">documentación de Git</a>.</p>
+<p>También tienes un libro online oficial de Git: <a class="reference external" href="http://git-scm.com/book/es/v2">libro online</a></p>
+<section id="como-funciona-git">
+<h2>¿Cómo funciona Git?<a class="headerlink" href="#como-funciona-git" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Los repositorios Git suelen encontrarse en un servidor que los aloja (<strong>repositorio remoto</strong>). A partir de ahí, los desarrolladores, que trabajan en un mismo proyecto, bajan una copia del repositorio a su ordenador (<strong>repositorio local</strong>), hacen los cambios que tengan que hacer en local y los suben al repositorio remoto para que dichos cambios estén disponibles para los demás desarrolladores.</p>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p>Un repositorio no es más que un carpeta preparada con Git. Dentro de esa carpeta puedes usar todos los comandos de Git.</p>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/git_remoto_local.svg"><img alt="_images/git_remoto_local.svg" src="_images/git_remoto_local.svg" width="80%" /></a>
+</figure>
+<section id="los-tres-estados-de-git">
+<h3>Los tres estados de Git<a class="headerlink" href="#los-tres-estados-de-git" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Así pues, cuando tienes que trabajar en un proyecto lo harás en tu copia local. Esta copia local puede encontrarse en alguno de <strong>los tres estados de Git</strong>, que son:</p>
+<p><strong>Confirmado</strong> (<em>committed</em>): los datos están almacenados de forma segura en tu copia local.</p>
+<p><strong>Modificado</strong> (<em>modified</em>): significa que has hecho cambios que no están confirmados.</p>
+<p><strong>Preparado</strong> (<em>staged</em>): significa que has marcado un archivo modificado en su versión actual para que vaya a tu próxima confirmación.</p>
+</section>
+<section id="ramas">
+<h3>Ramas<a class="headerlink" href="#ramas" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Sin entrar en muchos detalles, en Git puedes crear varias ramas de manera que tendrás una rama principal, normalmente llamada <em>main</em>, donde tines los cambios principales y creas otras ramas para ir añadiendo nuevas funcionalidades o que usas para corregir <em>bugs</em>, por ejemplo.</p>
+<p>Así, si tienes un <em>bug</em> que impide a los usuario iniciar sesión correctamente podrías crear una rama llamada, por ejemplo, <em>bugInicioSesion</em>, hacer las correcciones necesarias y, cuando esté corregido, mezclas la rama <em>bugInicioSesion</em> en la rama <em>main</em>.</p>
+</section>
+</section>
+<section id="primeros-pasos-con-git-configuracion">
+<h2>Primeros pasos con Git: configuración<a class="headerlink" href="#primeros-pasos-con-git-configuracion" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Antes de usar por primera vez Git tienes que personalizar tu entorno:</p>
+<p><strong>Tu identidad</strong>: tienes que establecer tu nombre y tu dirección de correo electrónico:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git config --global user.name <span class="s2">&quot;Román Martínez&quot;</span>
+<span class="gp">$</span> git config --global user.email rgmf@riseup.net
+</pre></div>
+</div>
+<p><strong>Tu editor</strong>: será el editor que se abra cuando sea necesario:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git config --global core.editor nano
+</pre></div>
+</div>
+</section>
+<section id="comandos-basicos-de-git">
+<h2>Comandos básicos de Git<a class="headerlink" href="#comandos-basicos-de-git" title="Enlazar permanentemente con este título">#</a></h2>
+<section id="comenzar-un-proyecto">
+<h3>Comenzar un proyecto<a class="headerlink" href="#comenzar-un-proyecto" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Puedes obtener o comenzar un proyecto Git de dos maneras:</p>
+<p><strong>Crear un repositorio local</strong>: entra en una carpeta y ejecuta el siguiente comando:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git init
+</pre></div>
+</div>
+<p><strong>Clonar un repositorio remoto</strong>: con el siguiente comando obtendrás una copia local de un repositorio remoto:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone git@github.com:rgmf/dwes-tema00.git
+</pre></div>
+</div>
+<p>En ambos casos, en la carpeta del proyecto, se crea un directorio llamado <code class="file docutils literal notranslate"><span class="pre">.git</span></code> donde está toda la información que necesita el sistema Git para la gestión de los ficheros del repositorio.</p>
+</section>
+<section id="anadir-ficheros-nuevos">
+<h3>Añadir ficheros nuevos<a class="headerlink" href="#anadir-ficheros-nuevos" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Cuando creas un nuevo fichero en tu repositorio local, tienes que añadirlo al seguimiento de Git. Se usa el comando <strong class="command">git add</strong> indicando, mediante una ruta relativa, el fichero a añadir. Imagina que has creado un fichero llamado <code class="file docutils literal notranslate"><span class="pre">HolaMundo.java</span></code> y lo quieres añadir al seguimiento. En este caso tienes que ejecutar el siguiente comando:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git add HolaMundo.java
+</pre></div>
+</div>
+</section>
+<section id="eliminar-ficheros">
+<h3>Eliminar ficheros<a class="headerlink" href="#eliminar-ficheros" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Se usa el comando <strong class="command">git rm</strong> junto a la ruta relativa al fichero que se quiere sacar del repositorio. Por ejemplo, imagina que quieres eliminar un fichero llamado <code class="file docutils literal notranslate"><span class="pre">HolaMundo.java</span></code> que está en la carpeta <code class="file docutils literal notranslate"><span class="pre">fuentes</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git rm fuentes/HolaMundo.java
+</pre></div>
+</div>
+</section>
+<section id="revisar-el-estado-del-repositorio-local">
+<h3>Revisar el estado del repositorio local<a class="headerlink" href="#revisar-el-estado-del-repositorio-local" title="Enlazar permanentemente con este título">#</a></h3>
+<p>En cualquier momento puedes revisar el estado del repositorio: qué ficheros hay confirmados, los ficheros que hay modificados, los que han sido eliminados, los que se han añadido, etc, con el domando:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git status
+</pre></div>
+</div>
+</section>
+<section id="ver-el-historial">
+<h3>Ver el historial<a class="headerlink" href="#ver-el-historial" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Se usa el comando siguiente:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git log
+</pre></div>
+</div>
+<p>Verás todos los commit que se han hecho entre otras cosas.</p>
+</section>
+<section id="confirmar-cambios-commit">
+<h3>Confirmar cambios (<em>commit</em>)<a class="headerlink" href="#confirmar-cambios-commit" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Una vez quieras confirmar los cambios de tu repositorio local tienes que ejecutar un <strong class="command">git commit</strong>. Cuando hablo de cambios me refiero a modificaciones de ficheros existentes, ficheros nuevos y ficheros borrados. Cada commit se acompaña de un mensaje como ves en el ejemplo siguiente:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git commit -am <span class="s2">&quot;Cambios realizados: este es el mensaje de esta confirmación o commit, escribe lo que quieras&quot;</span>
+</pre></div>
+</div>
+<p>Con la opción <strong class="command">-a</strong> nos ahorramos el paso de tener que hacer el <em>staged</em> para los ficheros que se tiene que añadir.</p>
+</section>
+<section id="subir-cambios-al-repositorio-remoto">
+<h3>Subir cambios al repositorio remoto<a class="headerlink" href="#subir-cambios-al-repositorio-remoto" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Cuando tienes un proyecto que quieres compartir, debes enviarlo a un servidor. El comando para hacerlo es simple: <strong class="command">push [nombre-remoto] [nombre-rama]</strong>. Donde:</p>
+<ul class="simple">
+<li><p>nombre-remoto: suele ser <em>origin</em>.</p></li>
+<li><p>nombre-rama: la rama donde quieres subirlo.</p></li>
+</ul>
+<p>Por ejemplo, el siguiente <em>push</em> lo hace al servidor <em>origin</em> y rama <em>main</em>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git push origin main
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="github.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Trabajar con GitHub</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Román Ginés Martínez Ferrández
+            </div>
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contenidos
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Git</a><ul>
+<li><a class="reference internal" href="#como-funciona-git">¿Cómo funciona Git?</a><ul>
+<li><a class="reference internal" href="#los-tres-estados-de-git">Los tres estados de Git</a></li>
+<li><a class="reference internal" href="#ramas">Ramas</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#primeros-pasos-con-git-configuracion">Primeros pasos con Git: configuración</a></li>
+<li><a class="reference internal" href="#comandos-basicos-de-git">Comandos básicos de Git</a><ul>
+<li><a class="reference internal" href="#comenzar-un-proyecto">Comenzar un proyecto</a></li>
+<li><a class="reference internal" href="#anadir-ficheros-nuevos">Añadir ficheros nuevos</a></li>
+<li><a class="reference internal" href="#eliminar-ficheros">Eliminar ficheros</a></li>
+<li><a class="reference internal" href="#revisar-el-estado-del-repositorio-local">Revisar el estado del repositorio local</a></li>
+<li><a class="reference internal" href="#ver-el-historial">Ver el historial</a></li>
+<li><a class="reference internal" href="#confirmar-cambios-commit">Confirmar cambios (<em>commit</em>)</a></li>
+<li><a class="reference internal" href="#subir-cambios-al-repositorio-remoto">Subir cambios al repositorio remoto</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script src="_static/translations.js"></script>
+    </body>
+</html>

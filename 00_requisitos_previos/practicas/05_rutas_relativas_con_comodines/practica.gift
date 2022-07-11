@@ -1,0 +1,45 @@
+Ruta relativa a la carpeta <strong>Imágenes</strong> {
+=Imágenes
+=Imágenes/
+}
+
+Ruta relativa a la raíz de la jerarquía {
+=../../
+=../..
+}
+
+Ruta relativa al directorio <strong>Descargas</strong> {
+=Descargas
+=Descargas/
+}
+
+Ruta relativa al fichero <strong>dni.jpg</strong> {
+=Documentos/dni.jpg
+}
+
+Ruta relativa al documento <strong>practica2.odt</strong> {
+=Documentos/informatica/practica2.odt
+}
+
+Ruta relativa a la carpeta <strong>home</strong> {
+=../
+=..
+}
+
+Ruta relativa a la carpeta <strong>etc</strong> {
+=../../etc
+=../../etc/
+}
+
+Ruta relativa al fichero <strong>anacron</strong> {
+=../../etc/cron.d/anacron
+}
+
+Ruta relativa a la carpeta <strong>gines</strong> {
+=../gines
+=../gines/
+}
+
+Ruta relativa al fichero de audio <strong>cancion.mp3</strong> {
+=Descargas/cancion.mp3
+}

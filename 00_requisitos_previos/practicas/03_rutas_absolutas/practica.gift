@@ -1,0 +1,45 @@
+Ruta absoluta a la carpeta <strong>gines</strong> {
+=/home/gines
+=/home/gines/
+}
+
+Ruta absoluta a la raíz de la jerarquía {
+=/
+}
+
+Ruta absoluta al directorio <strong>trabajos</strong> {
+=/home/roman/Documentos/trabajos
+=/home/roman/Documentos/trabajos/
+}
+
+Ruta absoluta al fichero <strong>crontab</strong> {
+=/etc/crontab
+=/etc/crontab/
+}
+
+Ruta absoluta a la carpeta <strong>etc</strong> {
+=/etc
+=/etc/
+}
+
+Ruta absoluta al directorio <strong>roman</strong> {
+=/home/roman
+=/home/roman/
+}
+
+Ruta absoluta al fichero <strong>practica1.odt</strong> {
+=/home/roman/Documentos/informatica/practica1.odt
+}
+
+Ruta absoluta al directorio <strong>Imágenes</strong> {
+=/home/roman/Imágenes
+=/home/roman/Imágenes/
+}
+
+Ruta absoluta a la imagen <strong>dni.jpg</strong> {
+=/home/roman/Documentos/dni.jpg
+}
+
+Ruta absoluta al fichero de audio <strong>cancion.mp3</strong> {
+=/home/roman/Descargas/cancion.mp3
+}

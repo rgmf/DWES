@@ -1,0 +1,42 @@
+[
+    {
+        "pregunta": "Ruta absoluta a la carpeta gines",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta absoluta a la raíz de la jerarquía",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta absoluta al directorio trabajos",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta absoluta al fichero crontab",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta absoluta a la carpeta etc",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta absoluta al directorio roman",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta absoluta al fichero practica1.odt",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta absoluta al directorio Imágenes",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta absoluta a la imagen dni.jpg",
+        "respuesta": ""
+    },
+    {
+        "pregunta": "Ruta absoluta al fichero de audio cancion.mp3",
+        "respuesta": ""
+    }
+]
