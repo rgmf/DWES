@@ -2,6 +2,7 @@
 - En la carpeta *doc* está todo el material y prácticas a realizar (en formato ReStructured Text).
 - El fichero *Debian.ova* es una máquina virtual, en VirtualBox, que compartiré con el alumnado para que puedan realizar el Lab 1.
 - En la carpeta *corregir* se tiene el script *corregir_practica1.py* en Python para corregir la Práctica 1. A este script hay que pasarle el fichero de texto con los nombres de usuarios de GitHub de los alumnos (uno por línea) y la ruta que sirve Apache.
+- En la carpeta *presentacion* tengo las presentaciones que voy a emplear para impartir clase durante este tema.
 
 * Antes de empezar
 ** Crear un repositorio en GitHub

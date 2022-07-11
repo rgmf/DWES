@@ -1,32 +1,42 @@
 [
     {
-        "http://www.ejemplo.com/index.html": ""
+        "url": "http://www.ejemplo.com/index.html",
+        "path": ""
     },
     {
-        "http://www.ejemplo.com/paginas/index.html": ""
+        "url": "http://www.ejemplo.com/index.html",
+        "path": ""
     },
     {
-        "http://www.ejemplo.com/web/css/base.css": ""
+        "url": "http://www.ejemplo.com/paginas/index.html",
+        "path": ""
     },
     {
-        "http://www.ejemplo.com/web/img/logo/grande.jpg": ""
+        "url": "http://www.ejemplo.com/web/css/base.css",
+        "path": ""
     },
     {
-        "http://www.ejemplo.com/web/img/logo/editado/peque.jpeg": ""
+        "url": "http://www.ejemplo.com/web/img/logo/grande.jpg",
+        "path": ""
     },
     {
-        "http://www.ejemplo.com/a/b/c/d.html": ""
+        "url": "http://www.ejemplo.com/web/img/logo/editado/peque.jpeg",
+        "path": ""
     },
     {
-        "http://www.ejemplo.com/a/b/c/d.html": ""
+        "url": "http://www.ejemplo.com/a/b/c/d.html",
+        "path": ""
     },
     {
-        "http://www.ejemplo.com/grupos.txt": ""
+        "url": "http://www.ejemplo.com/a/b/c/d.html",
+        "path": ""
     },
     {
-        "http://www.ejemplo.com/daw/videos/presentacion.webm": ""
+        "url": "http://www.ejemplo.com/grupos.txt",
+        "path": ""
     },
     {
-        "http://www.ejemplo.com/daw/alus/matricula/20/todos.html": ""
+        "url": "http://www.ejemplo.com/daw/videos/presentacion.webm",
+        "path": ""
     }
 ]

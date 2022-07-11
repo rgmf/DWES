@@ -184,6 +184,10 @@ El desarrollo web se basa en la arquitectura cliente/servidor donde se usa el pr
 
 El desarrollo se divide entre la parte del cliente, el front-end, y la parte del servidor, el back-end.
 
+Lecturas interesantes
+=====================
+`Los señores que gobiernan la web <https://www.eldiario.es/hojaderouter/internet/w3c-historia-funcionamiento-internet-web-tim-berners-lee_1_4427943.html>`__
+
 Citas, notas y bibliografía
 ===========================
 .. [HistoriaWeb]
