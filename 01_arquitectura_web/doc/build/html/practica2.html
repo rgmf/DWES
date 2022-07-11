@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="Práctica 2: de URL a ruta absoluta" href="practica2.html" /><link rel="prev" title="El protocolo HTTP" href="http.html" />
+<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="Lab 1: HTTP con Apache" href="lab_apache.html" /><link rel="prev" title="Funcionamiento del servidor web Apache" href="apache.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.04.1"/>
-        <title>Funcionamiento del servidor web Apache - Arquitectura Web</title>
+        <title>Práctica 2: de URL a ruta absoluta - Arquitectura Web</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
@@ -138,7 +138,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -162,8 +162,8 @@
 <li class="toctree-l1"><a class="reference internal" href="arquitectura_web.html">Arquitectura Web</a></li>
 <li class="toctree-l1"><a class="reference internal" href="practica1.html">Práctica 1: arquitectura web</a></li>
 <li class="toctree-l1"><a class="reference internal" href="http.html">El protocolo HTTP</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Funcionamiento del servidor web Apache</a></li>
-<li class="toctree-l1"><a class="reference internal" href="practica2.html">Práctica 2: de URL a ruta absoluta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apache.html">Funcionamiento del servidor web Apache</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Práctica 2: de URL a ruta absoluta</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab_apache.html">Lab 1: HTTP con Apache</a></li>
 </ul>
 
@@ -192,75 +192,22 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="funcionamiento-del-servidor-web-apache">
-<h1>Funcionamiento del servidor web Apache<a class="headerlink" href="#funcionamiento-del-servidor-web-apache" title="Enlazar permanentemente con este título">#</a></h1>
-<p><a class="reference external" href="https://httpd.apache.org/">Apache</a> es un servidor HTTP de código abierto que puede ser instalado en Linux, Windows y MacOS, entre otros sistemas operativos, aunque lo habitual es tenerlo instalado bajo un sistema operativo Linux.</p>
-<figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="_images/apache_logo.png"><img alt="_images/apache_logo.png" src="_images/apache_logo.png" style="width: 60%;" /></a>
-<figcaption>
-<p><span class="caption-text">Logo de Apache</span><a class="headerlink" href="#id1" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<p>Dado que en este módulo vamos a usar Apache, os voy a explicar el funcionamiento básico del mismo.</p>
-<section id="configuracion-de-apache">
-<h2>Configuración de Apache<a class="headerlink" href="#configuracion-de-apache" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Toda la configuración de Apache está en un fichero de texto llamado <code class="file docutils literal notranslate"><span class="pre">apache2.conf</span></code> dentro del directorio <code class="file docutils literal notranslate"><span class="pre">/etc/apache2</span></code>. Cada vez que se hacen cambios en dicho fichero hay que reiniciar el servidor:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> systemctl restart apache2
-</pre></div>
-</div>
-<p>Apache implementa la noción de <strong>sitio virtual</strong> (<strong>VirtualHost</strong>) según la normativa <a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc2616">RFC 2616</a>. Cada sitio se configura en un fichero de texto que se encuentra en el directorio <code class="file docutils literal notranslate"><span class="pre">/etc/apache2/sites-available</span></code> donde se indica, como mínimo, <strong>el puerto</strong> al que escuchará y <strong>el directorio</strong> donde están los recursos que puede servir. Un ejemplo mínimo de fichero de configuración de un <em>VirtualHost</em> se muestra a continuación:</p>
+          <section id="practica-2-de-url-a-ruta-absoluta">
+<h1>Práctica 2: de URL a ruta absoluta<a class="headerlink" href="#practica-2-de-url-a-ruta-absoluta" title="Enlazar permanentemente con este título">#</a></h1>
+<p>Descarga el <a class="reference external" href="./_static/practicas/practica2/practica2.json">siguiente fichero JSON</a>, complétalo y súbelo al repositorio <code class="file docutils literal notranslate"><span class="pre">dwes-tema1</span></code> de tu GitHub.</p>
+<p>En dicho JSON tienes que traducir las URL a la ruta absoluta del servidor donde está el recurso que se indica en la URL.</p>
+<p>El fichero de configuración del <em>VirtualHost</em> de Apache es el siguiente:</p>
 <div class="highlight-linux-config notranslate"><div class="highlight"><pre><span></span>&lt;VirtualHost *:80&gt;
-    DocumentoRoot /var/www/html
+    DocumentoRoot /home/daw/web
 &lt;/VirtualHost&gt;
 </pre></div>
 </div>
-</section>
-<section id="directorio-de-apache">
-<h2>Directorio de Apache<a class="headerlink" href="#directorio-de-apache" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Cada <em>VirtualHost</em> configurado de Apache sirve los recursos que haya en una carpeta que se indica en el fichero de configuración. En el ejemplo anterior, el <em>VirtualHost</em> de Apache escuchará las peticiones que lleguen por el puerto 80 y servirá los recursos que hay dentro de la carpeta <code class="file docutils literal notranslate"><span class="pre">/var/www/html</span></code>.</p>
-<p>Así, siguiendo con nuestro ejemplo e imaginando que el nombre de dominio es <strong>www.ejemplo.com</strong>, si se solicita el recurso <code class="file docutils literal notranslate"><span class="pre">http://www.ejemplo.com/daw/servidor_web/intro.html</span></code> entonces Apache servirá el fichero <code class="file docutils literal notranslate"><span class="pre">/var/www/html/daw/servidor_web/intro.html</span></code>:</p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="_images/ruta_a_partir_de_url.svg"><img alt="_images/ruta_a_partir_de_url.svg" src="_images/ruta_a_partir_de_url.svg" width="80%" /></a>
-</figure>
-<div class="admonition important">
-<p class="admonition-title">Importante</p>
-<p>Asegúrate que comprendes la diferencia entre URL y el <em>path</em> donde se encuentra el recurso al que apunta la URL.</p>
-</div>
-<p>A continuación te muestro dónde están los recursos de las siguientes URL. En estos ejemplos, el servidor Apache está configurado para servir los recursos dentro de la carpeta <code class="file docutils literal notranslate"><span class="pre">/var/www/html</span></code>:</p>
-<div class="table-wrapper colwidths-given docutils container">
-<table class="colwidths-given docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>URL</p></th>
-<th class="head"><p>Ruta absoluta al recurso en el sistema de archivos del sistema operativo</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="samp docutils literal notranslate"><span class="pre">http://www.ejemplo.com</span></code></p></td>
-<td><p><code class="file docutils literal notranslate"><span class="pre">/var/www/html/index.html</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="samp docutils literal notranslate"><span class="pre">http://www.ejemplo.com/pagina1.html</span></code></p></td>
-<td><p><code class="file docutils literal notranslate"><span class="pre">/var/www/html/pagina1.html</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="samp docutils literal notranslate"><span class="pre">http://www.ejemplo.com/daw/servidor_web/intro.html</span></code></p></td>
-<td><p><code class="file docutils literal notranslate"><span class="pre">/var/www/html/daw/servidor_web/intro.html</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="samp docutils literal notranslate"><span class="pre">http://www.ejemplo.com/daw/servidor_web/img/portada.png</span></code></p></td>
-<td><p><code class="file docutils literal notranslate"><span class="pre">/var/www/html/daw/servidor_web/img/portada.png</span></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 </section>
 
         </article>
@@ -268,23 +215,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="practica2.html">
+          <a class="next-page" href="lab_apache.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Práctica 2: de URL a ruta absoluta</div>
+                <div class="title">Lab 1: HTTP con Apache</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="http.html">
+          <a class="prev-page" href="apache.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">El protocolo HTTP</div>
+                <div class="title">Funcionamiento del servidor web Apache</div>
                 
               </div>
             </a>
@@ -307,28 +254,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contenidos
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Funcionamiento del servidor web Apache</a><ul>
-<li><a class="reference internal" href="#configuracion-de-apache">Configuración de Apache</a></li>
-<li><a class="reference internal" href="#directorio-de-apache">Directorio de Apache</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

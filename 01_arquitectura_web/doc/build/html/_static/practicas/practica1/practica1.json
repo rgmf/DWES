@@ -1,42 +1,42 @@
 [
     {
-        "url": "http://www.ejemplo.com/index.html",
-        "path": ""
+        "pregunta": "¿Qué arquitectura se usa en el desarrollo web?",
+        "respuesta": ""
     },
     {
-        "url": "http://www.ejemplo.com/index.html",
-        "path": ""
+        "pregunta": "¿Qué es Internet?",
+        "respuesta": ""
     },
     {
-        "url": "http://www.ejemplo.com/paginas/index.html",
-        "path": ""
+        "pregunta": "¿A qué llamamos Web?",
+        "respuesta": ""
     },
     {
-        "url": "http://www.ejemplo.com/web/css/base.css",
-        "path": ""
+        "pregunta": "¿Qué otros nombres recibe la Web?",
+        "respuesta": ""
     },
     {
-        "url": "http://www.ejemplo.com/web/img/logo/grande.jpg",
-        "path": ""
+        "pregunta": "En la arquitectura que se emplea en la Web, ¿qué actor se encarga de hacer el request?",
+        "respuesta": ""
     },
     {
-        "url": "http://www.ejemplo.com/web/img/logo/editado/peque.jpeg",
-        "path": ""
+        "pregunta": "En la arquitectura que se emplea en la Web, ¿qué actor se encarga de hacer el response?",
+        "respuesta": ""
     },
     {
-        "url": "http://www.ejemplo.com/a/b/c/d.html",
-        "path": ""
+        "pregunta": "¿En qué formato suelen ser las respuestas de los servidores web?",
+        "respuesta": ""
     },
     {
-        "url": "http://www.ejemplo.com/a/b/c/d.html",
-        "path": ""
+        "pregunta": "En la arquitectura que se emplea en la Web, ¿qué actor se encarga de hacer el response?",
+        "respuesta": ""
     },
     {
-        "url": "http://www.ejemplo.com/grupos.txt",
-        "path": ""
+        "pregunta": "¿Quién se encarga de los estándares en Internet?",
+        "respuesta": ""
     },
     {
-        "url": "http://www.ejemplo.com/daw/videos/presentacion.webm",
-        "path": ""
+        "pregunta": "¿Quién es el encargado de los estándares en la Web?",
+        "respuesta": ""
     }
 ]
