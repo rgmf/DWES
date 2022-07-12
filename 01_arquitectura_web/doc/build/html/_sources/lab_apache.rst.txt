@@ -135,3 +135,38 @@ Asegúrate que, tras estos pasos, tu servidor web puede servir los siguientes re
 
 Paso 7: cambiar puerto donde escucha Apache
 ===========================================
+Por defecto, Apache escucha las peticiones que llegan al puerto 80 (puerto HTTP por defecto).
+
+Si queremos cambiar el puerto al que escucha nuestro servidor Apache hay que modificar dos ficheros de configuración.
+
+Abre el siguiente fichero de configuración de Apache con nano:
+
+.. code-block:: console
+
+    # nano /etc/apache2/ports.conf
+
+Cambia la línea :literal:`Listen 80` por :literal:`Literal 8585`.
+
+Ahora, abre este otro fichero, donde está el VirtualHost por defecto, con nano:
+
+.. code-block:: console
+
+    # nano /etc/apache2/sites-available/000-default.conf
+
+En la primera línea tienes:
+
+.. code-block:: console
+
+    <VirtualHost *:80>
+
+Cambia ese :literal:`80` por el :literal:`85`.
+
+Cada vez que cambies la configuración de Apache, hay que reiniciar el servicio:
+
+.. code-block:: console
+
+    # systemctl restart apache2
+
+Ahora, si abres el navegador web e intentas acceder al sitio web :literal:`http://192.168.1.23` verás un error porque el servidor web no está escuchando al puerto 80.
+
+Tienes que indicar en la URL el puerto :literal:`8585` tal que así: :literal:`http://192.168.1.23:8585`.

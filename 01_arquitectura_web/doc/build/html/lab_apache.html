@@ -327,6 +327,28 @@
 </section>
 <section id="paso-7-cambiar-puerto-donde-escucha-apache">
 <h2>Paso 7: cambiar puerto donde escucha Apache<a class="headerlink" href="#paso-7-cambiar-puerto-donde-escucha-apache" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Por defecto, Apache escucha las peticiones que llegan al puerto 80 (puerto HTTP por defecto).</p>
+<p>Si queremos cambiar el puerto al que escucha nuestro servidor Apache hay que modificar dos ficheros de configuración.</p>
+<p>Abre el siguiente fichero de configuración de Apache con nano:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> nano /etc/apache2/ports.conf
+</pre></div>
+</div>
+<p>Cambia la línea <code class="docutils literal notranslate"><span class="pre">Listen</span> <span class="pre">80</span></code> por <code class="docutils literal notranslate"><span class="pre">Literal</span> <span class="pre">8585</span></code>.</p>
+<p>Ahora, abre este otro fichero, donde está el VirtualHost por defecto, con nano:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> nano /etc/apache2/sites-available/000-default.conf
+</pre></div>
+</div>
+<p>En la primera línea tienes:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;VirtualHost *:80&gt;</span>
+</pre></div>
+</div>
+<p>Cambia ese <code class="docutils literal notranslate"><span class="pre">80</span></code> por el <code class="docutils literal notranslate"><span class="pre">85</span></code>.</p>
+<p>Cada vez que cambies la configuración de Apache, hay que reiniciar el servicio:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> systemctl restart apache2
+</pre></div>
+</div>
+<p>Ahora, si abres el navegador web e intentas acceder al sitio web <code class="docutils literal notranslate"><span class="pre">http://192.168.1.23</span></code> verás un error porque el servidor web no está escuchando al puerto 80.</p>
+<p>Tienes que indicar en la URL el puerto <code class="docutils literal notranslate"><span class="pre">8585</span></code> tal que así: <code class="docutils literal notranslate"><span class="pre">http://192.168.1.23:8585</span></code>.</p>
 </section>
 </section>
 
