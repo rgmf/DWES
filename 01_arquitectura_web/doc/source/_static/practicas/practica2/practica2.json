@@ -1,42 +1,22 @@
 [
     {
-        "url": "http://www.ejemplo.com/index.html",
-        "path": ""
+        "pregunta": "¿Qué versión de HTTP te devuelve el servidor al solicitar el recurso http://baeldung.com?",
+        "respuesta": ""
     },
     {
-        "url": "http://www.ejemplo.com/index.html",
-        "path": ""
+        "pregunta": "¿Qué código de estado te devuelve el servidor al solicitar el recurso http://baeldung.com?",
+        "respuesta": ""
     },
     {
-        "url": "http://www.ejemplo.com/paginas/index.html",
-        "path": ""
+        "pregunta": "¿Qué versión de HTTP te devuelve el servidor al solicitar el recurso https://www.ieslaencanta.com?",
+        "respuesta": ""
     },
     {
-        "url": "http://www.ejemplo.com/web/css/base.css",
-        "path": ""
+        "pregunta": "¿Qué código de estado te devuelve el servidor al solicitar el recurso http://ieslaencanta.com?",
+        "respuesta": ""
     },
     {
-        "url": "http://www.ejemplo.com/web/img/logo/grande.jpg",
-        "path": ""
-    },
-    {
-        "url": "http://www.ejemplo.com/web/img/logo/editado/peque.jpeg",
-        "path": ""
-    },
-    {
-        "url": "http://www.ejemplo.com/a/b/c/d.html",
-        "path": ""
-    },
-    {
-        "url": "http://www.ejemplo.com/a/b/c/d.html",
-        "path": ""
-    },
-    {
-        "url": "http://www.ejemplo.com/grupos.txt",
-        "path": ""
-    },
-    {
-        "url": "http://www.ejemplo.com/daw/videos/presentacion.webm",
-        "path": ""
+        "pregunta": "Realiza un petición con cURL al recurso https://www.ieslaencanta.com inyectando la cabecera User-Agent con valor MiNavegadorWeb y la cabecera accept con valor text/html.",
+        "respuesta": "No respondas, haz la captura y guárdala en el mismo repositorio que este fichero."
     }
 ]

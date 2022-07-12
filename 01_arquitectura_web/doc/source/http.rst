@@ -262,6 +262,10 @@ Las páginas web estáticas no cambian y están escritas con tecnologías del la
 
 Las páginas web dinámicas son generadas en el servidor con tecnologías como PHP, así pues, cada vez que se solicita una página web que es dinámica su contenido podría ser diferente entre petición y petición.
 
+Profundizar en HTTP request and response
+========================================
+Si sientes curiosidad y quiere profundizar más sobre peticiones y respuestas puedes hacerlo en la siguiente página web: `REQBIN <https://reqbin.com>`__
+
 Bibliografía y referencias
 ==========================
 `Mozilla Developer. ¿Qués es una URL? <https://developer.mozilla.org/es/docs/Learn/Common_questions/What_is_a_URL>`__

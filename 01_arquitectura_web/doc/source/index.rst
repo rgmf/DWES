@@ -10,6 +10,7 @@ Para trabajar en este tema necesitas un repositorio en GitHub llamado :file:`dwe
     arquitectura_web
     practica1
     http
-    apache
     practica2
+    apache
+    practica3
     lab_apache

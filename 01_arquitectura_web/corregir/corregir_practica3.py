@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
         os.system(f"git clone {github_url}")
 
-        with open("dwes-tema1/practica2.json", "r") as fd:
+        with open("dwes-tema1/practica3.json", "r") as fd:
             data = json.load(fd)
 
         total = 0

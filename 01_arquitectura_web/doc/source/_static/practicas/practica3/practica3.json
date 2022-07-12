@@ -1,0 +1,42 @@
+[
+    {
+        "url": "http://www.ejemplo.com/index.html",
+        "path": ""
+    },
+    {
+        "url": "http://www.ejemplo.com/index.html",
+        "path": ""
+    },
+    {
+        "url": "http://www.ejemplo.com/paginas/index.html",
+        "path": ""
+    },
+    {
+        "url": "http://www.ejemplo.com/web/css/base.css",
+        "path": ""
+    },
+    {
+        "url": "http://www.ejemplo.com/web/img/logo/grande.jpg",
+        "path": ""
+    },
+    {
+        "url": "http://www.ejemplo.com/web/img/logo/editado/peque.jpeg",
+        "path": ""
+    },
+    {
+        "url": "http://www.ejemplo.com/a/b/c/d.html",
+        "path": ""
+    },
+    {
+        "url": "http://www.ejemplo.com/a/b/c/d.html",
+        "path": ""
+    },
+    {
+        "url": "http://www.ejemplo.com/grupos.txt",
+        "path": ""
+    },
+    {
+        "url": "http://www.ejemplo.com/daw/videos/presentacion.webm",
+        "path": ""
+    }
+]
