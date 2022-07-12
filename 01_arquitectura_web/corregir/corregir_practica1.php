@@ -1,7 +1,15 @@
 <?php
 
+########## Aux functions
 function show_help($program_name) {
-    echo "Usage: php $program_name [-h] -u/--github-users <github users file, one per line> -r/--repository-name <name of the repository>", "\n";
+    echo <<<EOT
+    Usage: php $program_name [-h] options
+
+    options:
+        -u, --github-users      GitHub users file, one per line
+        -r, --repository-name   Name of the repository
+
+    EOT;
 }
 
 function shell_command($cmd) {
@@ -15,6 +23,7 @@ function shell_command($cmd) {
     return $output;
 }
 
+########## Read input arguments
 $short_opts = "u:r:h";
 $long_opts = [
     "github-users:",
@@ -57,12 +66,32 @@ if (!file_exists($users_file)) {
     exit(-1);
 }
 
+########## Extract '\n' at the end of every user in the array of users
 $users_array = array_map(function ($item) {
     return substr($item, 0, -1);
 }, file($users_file));
 
+########## Compute mark for every user
+$users_marks = [];
 foreach ($users_array as $username) {
     $github_url = "git@github.com:$username/$repository_name.git";
     shell_command("git clone $github_url $username");
-    echo "Repositorio del usuario $username clonado";
+    $json_data = json_decode(file_get_contents("$username/practica1.json"), true);
+    $mark = 0;
+    foreach ($json_data as $q) {
+        echo $q["pregunta"], "\n";
+        echo $q["respuesta"], "\n";
+        $mark += (readline("Nota para esta pregunta [0 => mal, 5 => mal expresada, 10 => bien): ") / 10);
+        echo "\n";
+    }
+
+    $users_marks[$username] = $mark / count($json_data) * 10;
+
+    shell_command("rm -rf $username");
+}
+
+########## Show all users marks
+echo "\n", "Notas:", "\n";
+foreach ($users_marks as $username => $mark) {
+    echo $username, "\t", $mark, "\n";
 }
