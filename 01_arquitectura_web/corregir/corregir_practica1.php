@@ -1,7 +1,8 @@
 <?php
 
 ########## Aux functions
-function show_help($program_name) {
+function show_help($program_name)
+{
     echo <<<EOT
     Usage: php $program_name [-h] options
 
@@ -12,7 +13,8 @@ function show_help($program_name) {
     EOT;
 }
 
-function shell_command($cmd) {
+function shell_command($cmd)
+{
     $return_value = NULL;
     $output = [];
     exec($cmd, $output, $return_value);
