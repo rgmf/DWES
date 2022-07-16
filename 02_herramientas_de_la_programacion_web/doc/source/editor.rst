@@ -155,13 +155,13 @@ Visual Studio Code reconoce la sintaxis de PHP y tiene soporte básico para este
 
 PHP Intelephense
 ----------------
-Abre la actividad de extensiones de Visual Studio Code para instalar esta extensión. Escribiendo :literal:`php` en el buscardor de extensiones aparecerá entre las primera posiciones como ves en la imagen siguiente:
+Abre la actividad de extensiones de Visual Studio Code para instalar esta extensión. Escribiendo :literal:`php` en el buscador de extensiones aparecerá entre las primera posiciones como ves en la imagen siguiente:
 
 .. figure:: ./img/code_php_intelephense_ext.png
     :width: 80%
     :align: center
 
-`PHP Intelephense <https://intelephense.com/>` es una extensión popular para Visual Studio Code que te ofrece características avanzadas como:
+`PHP Intelephense <https://intelephense.com/>`__ es una extensión popular para Visual Studio Code que te ofrece características avanzadas como:
 
 - Autocompletado de código.
 - Mejor navegación entre componentes.
@@ -184,3 +184,6 @@ Abre la actividad de extensiones de Visual Studio Code y busca la extensión que
 .. figure:: ./img/code_php_debug_ext.png
     :width: 80%
     :align: center
+
+.. important::
+    Para poder usar esta extensión, antes tienes que instalar :literal:`XDebug` en tu ordenador. Visita la `página web oficial de XDebug <https://xdebug.org/>`__ y sigue los pasos que ahí se indican para instalarlo en Windows, GNU/Linux o MacOS, según tu caso.
