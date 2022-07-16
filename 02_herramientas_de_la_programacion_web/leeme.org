@@ -1,0 +1,5 @@
+* Recursos para este tema
+- En la carpeta *doc* está todo el material y prácticas a realizar (en formato ReStructured Text).
+- En la carpeta *presentacion* tengo las presentaciones que voy a emplear para impartir clase durante este tema.
+
+

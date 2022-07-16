@@ -18,8 +18,16 @@ En los siguientes apartados te guío para que puedas instalar, preparar y config
 
     Si quieres profundizar más en este editor puedes acudir a la documentación oficial: `Documentación de Code <https://code.visualstudio.com/docs>`__.
 
-Instalar PHP
-============
+Lenguaje de programación PHP
+============================
+PHP, acrónicomo recursivo de *PHP Hypertext Preprocessor*, es un lenguaje de programación de propósito general que se adapta especialmente al desarrollo web.
+
+El código PHP suele ser procesado en un servidor web por un intérprete PHP implementado como un módulo, un *daemon* o como un ejecutable de interfaz común o CGI.
+
+No obstante, en este tema, como introducción al lenguaje y como toma de contacto con él, lo vamos a usar como lenguaje de *scripting* y, por tanto, ejecutaremos los programas que hagamos con el intérprete de PHP instalado en nuestra máquina de desarrollo.
+
+Instalación de PHP
+------------------
 Si estás en GNU/Linux utiliza tu gestor de paquetes para la instalación de PHP 7.
 
 En Windows tienes que seguir estos pasos si quieres instalar PHP de forma manual:
