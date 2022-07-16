@@ -2,20 +2,34 @@ Entorno de desarrollo
 #####################
 A lo largo de este curso vamos a usar **PHP como lenguaje del lado del servidor** y el editor **Visual Studio Code**, VS Code o simplemente Code para el desarrollo de nuestros programas.
 
-Hay diferentes editores o IDE para desarrollar programas en PHP como, por ejemplo:
+Aunque nosotros vamos a uar Visual Studio Code, hay diferentes editores o IDE para desarrollar programas en PHP como, por ejemplo:
 
 - `PhpStorm <https://www.jetbrains.com/phpstorm/>`__
 - `Eclipse <https://www.eclipse.org/pdt/>`__
 - `Sublime Text <https://www.sublimetext.com/>`__
 - `VS Code <https://code.visualstudio.com/>`__
 
-La diferencia entre un editor o IDE, básicamente, es que el IDE es un entorno de desarrollo que integra varias herramientas como son: el editor, un depurador, botones de acción para ejecutar, lanzar los tests, etc. Un editor tipo Code es más simple porque, en principio, solo consta de eso mismo: un editor. No obstante, en este tipo de editores se pueden añadir funciones a través de extensiones.
+.. note::
+    La diferencia entre un editor o IDE, básicamente, es que el IDE es un entorno de desarrollo que integra varias herramientas como son: el editor, un depurador, botones de acción para ejecutar, lanzar los tests, etc. Un editor tipo Code es más simple porque, en principio, solo consta de eso mismo: un editor. No obstante, en este tipo de editores se pueden añadir funciones a través de extensiones.
 
-En los siguientes apartados te guío para que puedas instalar, preparar y configurar tu entorno de desarrollo.
+En los siguientes apartados te guío para que puedas instalar, preparar y configurar tu entorno de desarrollo para este tema.
 
 .. seealso::
 
     Si quieres profundizar más en este editor puedes acudir a la documentación oficial: `Documentación de Code <https://code.visualstudio.com/docs>`__.
+
+Instalar PHP
+============
+Si estás en GNU/Linux utiliza tu gestor de paquetes para la instalación de PHP 7.
+
+En Windows tienes que seguir estos pasos si quieres instalar PHP de forma manual:
+
+- Descarga PHP 7 en la `página web de PHP <https://windows.php.net/download#php-7.4>`__. Se trata de un :file:`.zip`.
+- Descomprime el fichero :file:`.zip` dentro de :file:`C:/php` (si no existe la carpeta :file:`php` dentro de :file:`C:/` créala).
+- Añade al :literal:`PATH` la carpeta :file:`C:/php`.
+
+.. note::
+    En temas posteriores usaremos alguna de las distribuciones populares para tener instalado PHP junto a un servidor web y base de datos, como son :literal:`XAMPP` o :literal:`WampServer`. Por ahora, como solo necesitamos PHP, lo dejaremos así.
 
 Visual Studio Code
 ==================

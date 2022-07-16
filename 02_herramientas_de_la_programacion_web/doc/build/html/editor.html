@@ -197,19 +197,36 @@
           <section id="entorno-de-desarrollo">
 <h1>Entorno de desarrollo<a class="headerlink" href="#entorno-de-desarrollo" title="Enlazar permanentemente con este título">#</a></h1>
 <p>A lo largo de este curso vamos a usar <strong>PHP como lenguaje del lado del servidor</strong> y el editor <strong>Visual Studio Code</strong>, VS Code o simplemente Code para el desarrollo de nuestros programas.</p>
-<p>Hay diferentes editores o IDE para desarrollar programas en PHP como, por ejemplo:</p>
+<p>Aunque nosotros vamos a uar Visual Studio Code, hay diferentes editores o IDE para desarrollar programas en PHP como, por ejemplo:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.jetbrains.com/phpstorm/">PhpStorm</a></p></li>
 <li><p><a class="reference external" href="https://www.eclipse.org/pdt/">Eclipse</a></p></li>
 <li><p><a class="reference external" href="https://www.sublimetext.com/">Sublime Text</a></p></li>
 <li><p><a class="reference external" href="https://code.visualstudio.com/">VS Code</a></p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
 <p>La diferencia entre un editor o IDE, básicamente, es que el IDE es un entorno de desarrollo que integra varias herramientas como son: el editor, un depurador, botones de acción para ejecutar, lanzar los tests, etc. Un editor tipo Code es más simple porque, en principio, solo consta de eso mismo: un editor. No obstante, en este tipo de editores se pueden añadir funciones a través de extensiones.</p>
-<p>En los siguientes apartados te guío para que puedas instalar, preparar y configurar tu entorno de desarrollo.</p>
+</div>
+<p>En los siguientes apartados te guío para que puedas instalar, preparar y configurar tu entorno de desarrollo para este tema.</p>
 <div class="admonition seealso">
 <p class="admonition-title">Ver también</p>
 <p>Si quieres profundizar más en este editor puedes acudir a la documentación oficial: <a class="reference external" href="https://code.visualstudio.com/docs">Documentación de Code</a>.</p>
 </div>
+<section id="instalar-php">
+<h2>Instalar PHP<a class="headerlink" href="#instalar-php" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Si estás en GNU/Linux utiliza tu gestor de paquetes para la instalación de PHP 7.</p>
+<p>En Windows tienes que seguir estos pasos si quieres instalar PHP de forma manual:</p>
+<ul class="simple">
+<li><p>Descarga PHP 7 en la <a class="reference external" href="https://windows.php.net/download#php-7.4">página web de PHP</a>. Se trata de un <code class="file docutils literal notranslate"><span class="pre">.zip</span></code>.</p></li>
+<li><p>Descomprime el fichero <code class="file docutils literal notranslate"><span class="pre">.zip</span></code> dentro de <code class="file docutils literal notranslate"><span class="pre">C:/php</span></code> (si no existe la carpeta <code class="file docutils literal notranslate"><span class="pre">php</span></code> dentro de <code class="file docutils literal notranslate"><span class="pre">C:/</span></code> créala).</p></li>
+<li><p>Añade al <code class="docutils literal notranslate"><span class="pre">PATH</span></code> la carpeta <code class="file docutils literal notranslate"><span class="pre">C:/php</span></code>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>En temas posteriores usaremos alguna de las distribuciones populares para tener instalado PHP junto a un servidor web y base de datos, como son <code class="docutils literal notranslate"><span class="pre">XAMPP</span></code> o <code class="docutils literal notranslate"><span class="pre">WampServer</span></code>. Por ahora, como solo necesitamos PHP, lo dejaremos así.</p>
+</div>
+</section>
 <section id="visual-studio-code">
 <h2>Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Enlazar permanentemente con este título">#</a></h2>
 <p>Visual Studio Code es un editor de programación multiplataforma desarrollado por Microsoft. Es un proyecto de software libre que se distribuye bajo licencia <code class="docutils literal notranslate"><span class="pre">MIT</span></code>, aunque los ejecutables se distribuyen bajo una licencia gratuita no libre.</p>
@@ -393,6 +410,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Entorno de desarrollo</a><ul>
+<li><a class="reference internal" href="#instalar-php">Instalar PHP</a></li>
 <li><a class="reference internal" href="#visual-studio-code">Visual Studio Code</a><ul>
 <li><a class="reference internal" href="#instalacion">Instalación</a></li>
 <li><a class="reference internal" href="#interfaz-de-usuario">Interfaz de usuario</a></li>
